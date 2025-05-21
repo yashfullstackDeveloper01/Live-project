@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
         /* Header Styling */
         .header {
             background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
             position: fixed;
             top: 0;
@@ -104,41 +105,41 @@
             background-color: rgba(255, 255, 255, 0.97);
             border-radius: 20px;
             padding: 50px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
             overflow: hidden;
-            
+            height: 900px;
+
         }
 
         .main-content::before {
             content: '';
             position: absolute;
-            top: -50%;  
+            top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 50px,
-                rgba(46, 125, 50, 0.05) 50px,
-                rgba(46, 125, 50, 0.05) 100px
-            );
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(46, 125, 50, 0.05) 50px,
+                    rgba(46, 125, 50, 0.05) 100px);
             z-index: -1;
             opacity: 0.3;
         }
 
         .title {
             font-size: 3rem;
-            color:rgb(255, 0, 0);
-            margin-bottom: 25px;
+            --primary-green: #2E7D32;
+            margin-top: 45px;
             text-shadow: 2px 2px 4px rgb(21, 255, 0);
+            font-size: 70px;
         }
 
         .description {
-            margin-bottom: 35px;
-            color: #03be6af1;
+            margin-top: 50px;
+            color: #0031acef;
             font-size: 1.3rem;
             max-width: 700px;
             margin-left: auto;
@@ -152,9 +153,9 @@
             padding: 14px 30px;
             text-decoration: none;
             border-radius: 10px;
-            margin-bottom: 40px;
+            margin-top: 80px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(64, 255, 0, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -166,7 +167,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: all 0.5s ease;
         }
 
@@ -177,60 +178,11 @@
         .btn:hover {
             background-color: var(--dark-green);
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Products Styling */
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .product {
-            background-color: #ffe1e1;
-            border-radius: 15px;
-            padding: 30px;
-            width: 280px;
-            transition: all 0.4s ease;
-            text-align: center;
-            border: 2px solid transparent;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .product:hover {
-            transform: translateY(-15px);
-            border-color: var(--primary-green);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .product h3 {
-            color: var(--primary-green);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .product p {
-            color: #616161;
-            margin-top: 10px;
-        }
-
-        .img, .img-1 {
-            height: 150px;
-            width: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--primary-green);
-            margin: 0 auto 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .product:hover .img,
-        .product:hover .img-1 {
-            transform: scale(1.1) rotate(5deg);
-        }
+     
+        
 
         /* About Section Styling */
         .about-section {
@@ -238,7 +190,7 @@
             padding: 60px 20px;
             text-align: center;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin: 50px auto;
             max-width: 900px;
         }
@@ -285,12 +237,12 @@
             width: 220px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .feature:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .feature i {
@@ -317,7 +269,7 @@
             border-radius: 15px;
             padding: 20px;
             width: 250px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -376,24 +328,14 @@
             padding: 60px 20px;
             text-align: center;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin: 50px auto;
             max-width: 900px;
             position: relative;
             overflow: hidden;
         }
 
-        .coming-soon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('/api/placeholder/400/320') center/cover no-repeat;
-            opacity: 0.05;
-            z-index: -1;
-        }
+        
 
         .coming-soon h2 {
             font-size: 2.5rem;
@@ -416,28 +358,7 @@
             flex-wrap: wrap;
         }
 
-        .countdown-item {
-            background-color: var(--primary-green);
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 100px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .countdown-item span {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .countdown-item p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.8);
-        }
+       
 
         /* Contact Section */
         .contact-section {
@@ -445,7 +366,7 @@
             padding: 60px 20px;
             text-align: center;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin: 50px auto;
             max-width: 900px;
         }
@@ -525,7 +446,7 @@
             border-radius: 15px;
             margin-top: 20px;
             border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -571,13 +492,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .submit-btn:hover {
             background-color: var(--dark-green);
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer Styling */
@@ -696,7 +617,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             z-index: 999;
             opacity: 0;
@@ -726,7 +647,10 @@
                 justify-content: center;
             }
 
-            .main-content, .about-section, .contact-section, .coming-soon {
+            .main-content,
+            .about-section,
+            .contact-section,
+            .coming-soon {
                 margin: 100px 20px 50px;
                 padding: 30px 20px;
             }
@@ -769,8 +693,55 @@
                 height: 40px;
             }
         }
+        /* From Uiverse.io by adamgiebl */ 
+button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #FF0072;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FF0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF0072;
+  z-index: -1;
+}
+
+button:hover, button:focus {
+  color: white;
+}
+
+button:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="header-content">
@@ -787,34 +758,29 @@
         </div>
     </header>
 
-    <main style="background-image: url(./asset/op.png);background-position: center; background-repeat: no-repeat; background-size:cover ;" class="main-content" id="home">
+    <main
+        style="background-image: url(./asset/home-img.png);background-position: center; background-repeat: no-repeat; background-size:cover ;"
+        class="main-content" id="home">
         <h1 class="title">Pure Dairy Goodness</h1>
         <p class="description">
-            Nourishing India, One Drop at a Time. Committed to delivering the freshest, 
-            highest quality milk products sourced directly from local farmers. 
+            Nourishing India, One Drop at a Time. Committed to delivering the freshest,
+            highest quality milk products sourced directly from local farmers.
             Our mission is to provide nutritious, wholesome dairy to every home.
         </p>
         <a href="#products-soon" class="btn">Explore Our Products</a>
-        <div class="products">
-            <div class="product">
-                <h3>Toned Milk</h3>
-                <img class="img" src="./asset/Toned Milk .jpeg" alt="Toned Milk">
-                <p>Low-Fat Nutrition</p>
-            </div>
-            <div class="product">
-                <h3>Full Cream Milk</h3>
-                <img class="img-1" src="./asset/cream-m.jpeg" alt="Full Cream Milk">
-                <p>Rich & Creamy</p>
-            </div>
-        </div>
+       
     </main>
 
     <section class="about-section" id="about">
         <h2>About Renuka Dairy</h2>
         <p>
-            At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products sourced directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home, ensuring health and happiness for our community. With over 20 years of experience in the dairy industry, we have built strong relationships with farmers across the region, ensuring that our milk comes from healthy, well-cared-for cows raised on sustainable farms.
+            At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products sourced
+            directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home, ensuring
+            health and happiness for our community. With over 20 years of experience in the dairy industry, we have
+            built strong relationships with farmers across the region, ensuring that our milk comes from healthy,
+            well-cared-for cows raised on sustainable farms.
         </p>
-        
+
         <div class="about-features">
             <div class="feature">
                 <i class="fas fa-leaf"></i>
@@ -832,7 +798,7 @@
                 <p>Highest quality standards in every drop</p>
             </div>
         </div>
-        
+
         <div class="team">
             <div class="team-member">
                 <img src="./asset/cream-m.jpeg" alt="Founder">
@@ -869,13 +835,34 @@
 
     <section class="coming-soon" id="products-soon">
         <h2>Our Products Coming Soon</h2>
-        <p>We're working hard to bring you our premium dairy products online. Sign up to be notified when our full product range is available.</p>
+        <p>Renuca Dairy brings you the richness of tradition in every sip and bite.
+            Sourced from healthy cows and processed with care,
+            Our products promise purity, freshness, and taste you can trust.
+            Experience dairy the way nature intended.</p>
+
+        <p>
+            From farm to family, Renuca Dairy delivers pure, wholesome goodness.
+            Crafted with love and backed by quality,
+            Every product reflects our commitment to health and taste.
+            Enjoy the creamy delight of nature’s best.
+        </p>
+        <p>
+            At Renuca Dairy, quality is our promise and taste is our pride.
+            We blend tradition with modern care to bring you the finest dairy.
+            Fresh, nutritious, and irresistibly delicious—
+            Discover the flavor your family deserves.
+
+
+        </p>
+
+       <a href="./products.html"><button>product </button></a>
     </section>
 
     <section class="contact-section" id="contact">
         <h2>Contact Us</h2>
-        <p>Have questions or feedback? We'd love to hear from you. Reach out to us using the form below or through our contact information.</p>
-        
+        <p>Have questions or feedback? We'd love to hear from you. Reach out to us using the form below or through our
+            contact information.</p>
+
         <div class="contact-container">
             <div class="contact-info">
                 <div class="info-item">
@@ -910,10 +897,12 @@
                         <p>Sunday: 8:00 AM - 2:00 PM</p>
                     </div>
                 </div>
-                
-                <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.03900799053!2d72.88115785!3d19.08268785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1653825322!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+
+                <iframe class="contact-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.03900799053!2d72.88115785!3d19.08268785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1653825322!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy"></iframe>
             </div>
-            
+
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
@@ -949,16 +938,17 @@
                     <i class="fas fa-cow"></i>
                     Renuka Dairy
                 </div>
-                <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can trust, freshness you can taste.</p>
+                <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can trust,
+                    freshness you can taste.</p>
                 <div class="social-media">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    
+
                 </div>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
@@ -966,10 +956,10 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#products-soon">Products</a></li>
                     <li><a href="#contact">Contact</a></li>
-                   
+
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Our Products</h3>
                 <ul class="footer-links">
@@ -981,10 +971,10 @@
                     <li><a href="#">Curd & Yogurt</a></li>
                 </ul>
             </div>
-            
-            
-        
-        
+
+
+
+
     </footer>
 
     <a href="#home" class="back-to-top" id="backToTop">
@@ -1005,12 +995,12 @@
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
+
                 if (targetSection) {
                     window.scrollTo({
                         top: targetSection.offsetTop - 80,
@@ -1020,7 +1010,8 @@
             });
         });
 
-      
+
     </script>
 </body>
-</html>    
+
+</html>
