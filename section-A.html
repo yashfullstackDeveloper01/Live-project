@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renuka Dairy Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(20, 20, 20);
+            border: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+            position: relative;
+            margin-left: 70%;
+        }
+
+        .svgIcon {
+            width: 12px;
+            transition-duration: 0.3s;
+        }
+
+        .svgIcon path {
+            fill: white;
+        }
+
+        .button:hover {
+            width: 140px;
+            border-radius: 50px;
+            transition-duration: 0.3s;
+            background-color: rgb(181, 160, 255);
+            align-items: center;
+        }
+
+        .button:hover .svgIcon {
+            /* width: 20px; */
+            transition-duration: 0.3s;
+            transform: translateY(-200%);
+        }
+
+        .button::before {
+            position: absolute;
+            bottom: -20px;
+            content: "Back to home";
+            color: white;
+            /* transition-duration: .3s; */
+            font-size: 0px;
+        }
+
+        .button:hover::before {
+            font-size: 13px;
+            opacity: 1;
+            bottom: unset;
+            /* transform: translateY(-30px); */
+            transition-duration: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 50%, #e8f5e8 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4caf50, #2e7d32);
+            transition: left 0.4s ease;
+        }
+
+        .product-card:hover::before {
+            left: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+        }
+
+        .product-image {
+            width: 200px;
+            height: 250px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border-radius: 100%;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-size {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .currency {
+            font-size: 1.2rem;
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-description {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .btn-description:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.6);
+        }
+
+        .nutrition-info {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            font-size: 0.85rem;
+            color: #5d4037;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4caf50;
+        }
+
+        .modal p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 20px;
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">Renuka Milk Products</h1>
+            <p class="section-subtitle">Pure, Fresh & Nutritious Milk Products Direct from Our Farm to Your Family</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Full Cream Milk -->
+            <div class="product-card">
+                <img src="./asset/cream-m.jpeg" alt="Full Cream Milk" class="product-image">
+                <h3 class="product-name">Full Cream Milk</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>32
+                    <span class="original-price">₹38</span>
+                </div>
+                <div class="nutrition-info">
+                    Rich in Protein & Calcium | 6% Fat Content
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('fullcream')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Toned Milk -->
+            <div class="product-card">
+                <img src="./asset/Toned Milk .jpeg" alt="Toned Milk" class="product-image">
+                <h3 class="product-name">Toned Milk</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+                <div class="price-tag">
+                    <span class="currency">₹</span>28
+                </div>
+                <div class="nutrition-info">
+                    Low Fat Content | High Nutrition | 3% Fat
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('toned')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Buffalo Milk -->
+            <div class="product-card">
+                <img src="./asset/buffelow-milk.webp" alt="Buffalo Milk" class="product-image">
+                <h3 class="product-name">Buffalo Milk</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+                <div class="price-tag">
+                    <span class="currency">₹</span>30
+                </div>
+                <div class="nutrition-info">
+                    Balanced Nutrition | 4.5% Fat | Fortified
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('buffalo')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Cow Milk -->
+            <div class="product-card">
+                <img src="./asset/cow-milk.webp" alt="Cow Milk" class="product-image">
+                <h3 class="product-name">Cow Milk</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>35
+                </div>
+                <div class="nutrition-info">
+                    100% Pure Cow Milk | Natural | No Additives
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('cow')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Shrikhand -->
+            <div class="product-card">
+                <img src="./asset/standadise-milk-removebg-preview.png" alt="Shrikhand" class="product-image">
+                <h3 class="product-name">Standardized Milk</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>40
+                    <span class="original-price">₹45</span>
+                </div>
+                <div class="nutrition-info">
+                    Premium Grade | Enhanced Nutrition | 5% Fat
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('shrikhand')">📋 Description</button>
+                </div>
+            </div>
+
+          
+          
+        </div>
+  <a href="./index.html">
+                <button class="button">
+                    <svg class="svgIcon" viewBox="0 0 384 512">
+                        <path
+                            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+                        </path>
+                    </svg>
+                </button></a>
+
+        <!-- Modal for Product Descriptions -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showDescription(productType) {
+                const modal = document.getElementById('productModal');
+                const modalContent = document.getElementById('modalContent');
+
+                const descriptions = {
+                    fullcream: {
+                        title: "Full Cream Milk - Premium Quality",
+                        content: `
+                        <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows in our organic farms.</p>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>High in protein for muscle development</li>
+                            <li>Rich in calcium for strong bones and teeth</li>
+                            <li>Contains essential vitamins A, D, and B12</li>
+                            <li>6% fat content for energy and satiety</li>
+                            <li>No artificial preservatives or additives</li>
+                            <li>Perfect for growing children and adults</li>
+                        </ul>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+                        <p>Energy: 66 kcal | Protein: 3.2g | Fat: 6.0g | Carbs: 4.7g | Calcium: 120mg</p>
+                    `
+                    },
+                    toned: {
+                        title: "Toned Milk - Healthy Choice",
+                        content: `
+                        <p>Toned Milk offers the perfect balance of nutrition and health consciousness. Ideal for those who want milk benefits with reduced fat content.</p>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>Lower fat content (3%) for weight management</li>
+                            <li>Maintains high protein and calcium levels</li>
+                            <li>Easier to digest than full cream milk</li>
+                            <li>Suitable for heart-healthy diets</li>
+                            <li>Great for tea, coffee, and cereals</li>
+                            <li>Recommended by nutritionists</li>
+                        </ul>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+                        <p>Energy: 58 kcal | Protein: 3.1g | Fat: 3.0g | Carbs: 4.8g | Calcium: 115mg</p>
+                    `
+                    },
+                    buffalo: {
+                        title: "Buffalo Milk - Rich & Creamy",
+                        content: `
+                        <p>Our Buffalo Milk is specially formulated to provide balanced nutrition for modern lifestyles. Enhanced with essential nutrients.</p>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>Fortified with additional vitamins and minerals</li>
+                            <li>4.5% fat content for optimal nutrition</li>
+                            <li>Enhanced protein absorption</li>
+                            <li>Supports immune system function</li>
+                            <li>Smart packaging for freshness retention</li>
+                            <li>Perfect for all family members</li>
+                        </ul>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+                        <p>Energy: 62 kcal | Protein: 3.3g | Fat: 4.5g | Carbs: 4.6g | Calcium: 125mg</p>
+                    `
+                    },
+                    cow: {
+                        title: "Pure Cow Milk - Farm Fresh",
+                        content: `
+                        <p>100% Pure Cow Milk directly from our farm to your table. No mixing, no additives - just pure, natural goodness.</p>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>100% pure cow milk with no adulteration</li>
+                            <li>Farm fresh quality with natural taste</li>
+                            <li>Rich in natural enzymes and probiotics</li>
+                            <li>Traditional taste that you remember</li>
+                            <li>Supports local dairy farmers</li>
+                            <li>Perfect for making homemade dairy products</li>
+                        </ul>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+                        <p>Energy: 68 kcal | Protein: 3.4g | Fat: 6.2g | Carbs: 4.5g | Calcium: 130mg</p>
+                    `
+                    },
+                    shrikhand: {
+                        title: "Shrikhand - Traditional Sweet",
+                        content: `
+                        <p>Our traditional Shrikhand represents authentic Indian dairy dessert. Made with pure yogurt and natural sweeteners.</p>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>Traditional recipe passed down generations</li>
+                            <li>Made with pure strained yogurt</li>
+                            <li>Natural cardamom and saffron flavoring</li>
+                            <li>Rich in probiotics for digestive health</li>
+                            <li>Perfect dessert for festivals</li>
+                            <li>No artificial colors or preservatives</li>
+                        </ul>
+                        
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+                        <p>Energy: 150 kcal | Protein: 4.5g | Fat: 6.0g | Carbs: 20g | Calcium: 140mg</p>
+                    `
+                    },
+                
+                };
+
+                const product = descriptions[productType];
+                modalContent.innerHTML = `
+                <h2>${product.title}</h2>
+                ${product.content}
+            `;
+
+                modal.style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('productModal').style.display = 'none';
+            }
+
+            // Close modal when clicking outside of it
+            window.onclick = function (event) {
+                const modal = document.getElementById('productModal');
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+
+            // Add some interactive animations on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                const cards = document.querySelectorAll('.product-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px)';
+                        card.style.transition = 'all 0.6s ease';
+
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    }, index * 100);
+                });
+            });
+        </script>
+</body>
+
+</html>
