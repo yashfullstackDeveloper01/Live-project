@@ -683,63 +683,6 @@ section {
 .contact-map:hover {
   filter: grayscale(0%);
 }
-
-.contact-form-container {
-  background: var(--cream);
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px var(--shadow-light);
-}
-
-.contact-form {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-weight: 500;
-  color: var(--primary-green);
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.form-control {
-  padding: 1rem;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  background: var(--white);
-  font-size: 1rem;
-  transition: var(--transition);
-  font-family: inherit;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--primary-green);
-  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.submit-btn {
-  justify-self: start;
-  min-width: 200px;
-}
-
 /* Footer */
 .footer {
   background: var(--dark-green);
@@ -1000,18 +943,9 @@ textarea.form-control {
   section {
     padding: 3rem 0;
   }
-
-  .contact-form-container {
-    padding: 1.5rem;
+ 
+} 
+.c-bg{
+    height: 600px;
+    width: auto;
   }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-btn {
-    width: 100%;
-    border-radius: 25px;
-    height: 45px;
-  }
-}
