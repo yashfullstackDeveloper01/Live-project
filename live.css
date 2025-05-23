@@ -953,3 +953,8 @@ section {
     height: 65px;
     width: auto;
   }
+.img-one{
+  border-radius: 50px;
+  height: 230px;
+  width: 300px;
+}
