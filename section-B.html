@@ -448,107 +448,121 @@
 
         <script>
             function showDescription(productType) {
-                const modal = document.getElementById('productModal');
-                const modalContent = document.getElementById('modalContent');
+    const modal = document.getElementById('productModal');
+    const modalContent = document.getElementById('modalContent');
 
-                const descriptions = {
-                    fullcream: {
-                        title: "Full Cream Milk - Premium Quality",
-                        content: `
-                        <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows in our organic farms.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>High in protein for muscle development</li>
-                            <li>Rich in calcium for strong bones and teeth</li>
-                            <li>Contains essential vitamins A, D, and B12</li>
-                            <li>6% fat content for energy and satiety</li>
-                            <li>No artificial preservatives or additives</li>
-                            <li>Perfect for growing children and adults</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 66 kcal | Protein: 3.2g | Fat: 6.0g | Carbs: 4.7g | Calcium: 120mg</p>
-                    `
-                    },
-                    toned: {
-                        title: "Toned Milk - Healthy Choice",
-                        content: `
-                        <p>Toned Milk offers the perfect balance of nutrition and health consciousness. Ideal for those who want milk benefits with reduced fat content.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Lower fat content (3%) for weight management</li>
-                            <li>Maintains high protein and calcium levels</li>
-                            <li>Easier to digest than full cream milk</li>
-                            <li>Suitable for heart-healthy diets</li>
-                            <li>Great for tea, coffee, and cereals</li>
-                            <li>Recommended by nutritionists</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 58 kcal | Protein: 3.1g | Fat: 3.0g | Carbs: 4.8g | Calcium: 115mg</p>
-                    `
-                    },
-                    buffalo: {
-                        title: "Buffalo Milk - Rich & Creamy",
-                        content: `
-                        <p>Our Buffalo Milk is specially formulated to provide balanced nutrition for modern lifestyles. Enhanced with essential nutrients.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Fortified with additional vitamins and minerals</li>
-                            <li>4.5% fat content for optimal nutrition</li>
-                            <li>Enhanced protein absorption</li>
-                            <li>Supports immune system function</li>
-                            <li>Smart packaging for freshness retention</li>
-                            <li>Perfect for all family members</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 62 kcal | Protein: 3.3g | Fat: 4.5g | Carbs: 4.6g | Calcium: 125mg</p>
-                    `
-                    },
-                 
-                };
+    const descriptions = {
+        fullcream: {
+            title: "Fresh Paneer - Premium Quality",
+            content: `
+            <p>Our Fresh Paneer is made from the finest quality milk using traditional methods. Soft, creamy, and packed with nutrition, it's perfect for all your culinary needs.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>High protein content (18g per 100g) for muscle building and repair</li>
+                <li>Excellent source of calcium (208mg per 100g) for strong bones</li>
+                <li>Rich in phosphorus, magnesium, and vitamin B12</li>
+                <li>Low carbohydrate content suitable for keto and low-carb diets</li>
+                <li>Contains all essential amino acids for complete nutrition</li>
+                <li>Fresh daily preparation ensures maximum nutrition and taste</li>
+                <li>No artificial preservatives or additives</li>
+                <li>Soft texture perfect for direct consumption and cooking</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+            <p><strong>Energy:</strong> 265 kcal | <strong>Protein:</strong> 18.3g | <strong>Fat:</strong> 20.8g | <strong>Carbohydrates:</strong> 1.2g | <strong>Calcium:</strong> 208mg | <strong>Iron:</strong> 0.2mg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Perfect for paneer curry, palak paneer, paneer tikka, grilled dishes, salads, and snacking. Ideal for vegetarian protein needs.</p>
+        `
+        },
+        toned: {
+            title: "Paneer Cubes - Ready to Cook",
+            content: `
+            <p>Our pre-cut Paneer Cubes are perfectly sized for convenient cooking. Made from premium quality milk with optimal texture for various cooking methods.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>Pre-cut uniform cubes save preparation time</li>
+                <li>Optimal size for even cooking and better presentation</li>
+                <li>Firm texture that holds shape during cooking</li>
+                <li>High protein content supports fitness goals</li>
+                <li>Quick absorption of spices and marinades</li>
+                <li>Convenient packaging for easy storage</li>
+                <li>Perfect for both Indian and continental cuisines</li>
+                <li>Suitable for grilling, frying, and curry preparations</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+            <p><strong>Energy:</strong> 265 kcal | <strong>Protein:</strong> 18.3g | <strong>Fat:</strong> 20.8g | <strong>Carbohydrates:</strong> 1.2g | <strong>Calcium:</strong> 208mg | <strong>Vitamin A:</strong> 195mcg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Ideal for paneer butter masala, kadai paneer, paneer tikka, stir-fries, and continental dishes. Perfect for restaurant-style presentations.</p>
+        `
+        },
+        buffalo: {
+            title: "Premium Paneer - Artisan Quality",
+            content: `
+            <p>Our Premium Artisan Paneer is crafted using time-honored techniques with the highest quality buffalo milk. Rich, creamy texture with superior taste for discerning palates.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>Made from premium buffalo milk for richer taste</li>
+                <li>Traditional artisan preparation methods</li>
+                <li>Higher fat content for creamier texture and taste</li>
+                <li>Superior protein quality with better amino acid profile</li>
+                <li>Natural fermentation process enhances digestibility</li>
+                <li>Longer shelf life due to traditional preservation methods</li>
+                <li>Premium packaging maintains freshness and quality</li>
+                <li>Perfect for special occasions and gourmet cooking</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+            <p><strong>Energy:</strong> 296 kcal | <strong>Protein:</strong> 20.1g | <strong>Fat:</strong> 23.5g | <strong>Carbohydrates:</strong> 1.0g | <strong>Calcium:</strong> 230mg | <strong>Phosphorus:</strong> 180mg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Excellent for premium dishes like shahi paneer, paneer makhani, desserts like rasgulla, and special occasion cooking. Perfect for fine dining experiences.</p>
+        `
+        }
+    };
 
-                const product = descriptions[productType];
-                modalContent.innerHTML = `
-                <h2>${product.title}</h2>
-                ${product.content}
-            `;
+    const product = descriptions[productType];
+    modalContent.innerHTML = `
+        <h2>${product.title}</h2>
+        ${product.content}
+    `;
 
-                modal.style.display = 'block';
-            }
+    modal.style.display = 'block';
+}
 
-            function closeModal() {
-                document.getElementById('productModal').style.display = 'none';
-            }
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
 
-            // Close modal when clicking outside of it
-            window.onclick = function (event) {
-                const modal = document.getElementById('productModal');
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
-            // Add some interactive animations on page load
-            document.addEventListener('DOMContentLoaded', function () {
-                const cards = document.querySelectorAll('.product-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                        card.style.transition = 'all 0.6s ease';
+// Add interactive animations on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
 
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    }, index * 100);
-                });
-            });
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }, index * 100);
+    });
+});
         </script>
 </body>
 

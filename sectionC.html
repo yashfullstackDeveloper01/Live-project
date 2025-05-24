@@ -387,8 +387,8 @@
         <div class="products-grid">
             <!-- Full Cream Milk -->
             <div class="product-card">
-                <img src="./asset/download-removebg-preview.png" alt="Full Cream Milk" class="product-image">
-                <h3 class="product-name">Ice cream</h3>
+                <img src="./asset/vanilla-removebg-preview.png" alt="Full Cream Milk" class="product-image">
+                <h3 class="product-name">Vanilla Ice cream</h3>
                 <p class="product-size">SKU Size: 500ml</p>
 
                 <div class="price-tag">
@@ -469,10 +469,7 @@
                     <button class="btn btn-description" onclick="showDescription('shrikhand')">📋 Description</button>
                 </div>
             </div>
-
-          
-          
-        </div>
+        </div>   
   <a href="./index.html">
                 <button class="button">
                     <svg class="svgIcon" viewBox="0 0 384 512">
@@ -493,146 +490,160 @@
         </div>
 
         <script>
-            function showDescription(productType) {
-                const modal = document.getElementById('productModal');
-                const modalContent = document.getElementById('modalContent');
+         function showDescription(productType) {
+    const modal = document.getElementById('productModal');
+    const modalContent = document.getElementById('modalContent');
 
-                const descriptions = {
-                    fullcream: {
-                        title: "Full Cream Milk - Premium Quality",
-                        content: `
-                        <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows in our organic farms.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>High in protein for muscle development</li>
-                            <li>Rich in calcium for strong bones and teeth</li>
-                            <li>Contains essential vitamins A, D, and B12</li>
-                            <li>6% fat content for energy and satiety</li>
-                            <li>No artificial preservatives or additives</li>
-                            <li>Perfect for growing children and adults</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 66 kcal | Protein: 3.2g | Fat: 6.0g | Carbs: 4.7g | Calcium: 120mg</p>
-                    `
-                    },
-                    toned: {
-                        title: "Toned Milk - Healthy Choice",
-                        content: `
-                        <p>Toned Milk offers the perfect balance of nutrition and health consciousness. Ideal for those who want milk benefits with reduced fat content.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Lower fat content (3%) for weight management</li>
-                            <li>Maintains high protein and calcium levels</li>
-                            <li>Easier to digest than full cream milk</li>
-                            <li>Suitable for heart-healthy diets</li>
-                            <li>Great for tea, coffee, and cereals</li>
-                            <li>Recommended by nutritionists</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 58 kcal | Protein: 3.1g | Fat: 3.0g | Carbs: 4.8g | Calcium: 115mg</p>
-                    `
-                    },
-                    buffalo: {
-                        title: "Buffalo Milk - Rich & Creamy",
-                        content: `
-                        <p>Our Buffalo Milk is specially formulated to provide balanced nutrition for modern lifestyles. Enhanced with essential nutrients.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Fortified with additional vitamins and minerals</li>
-                            <li>4.5% fat content for optimal nutrition</li>
-                            <li>Enhanced protein absorption</li>
-                            <li>Supports immune system function</li>
-                            <li>Smart packaging for freshness retention</li>
-                            <li>Perfect for all family members</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 62 kcal | Protein: 3.3g | Fat: 4.5g | Carbs: 4.6g | Calcium: 125mg</p>
-                    `
-                    },
-                    cow: {
-                        title: "Pure Cow Milk - Farm Fresh",
-                        content: `
-                        <p>100% Pure Cow Milk directly from our farm to your table. No mixing, no additives - just pure, natural goodness.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>100% pure cow milk with no adulteration</li>
-                            <li>Farm fresh quality with natural taste</li>
-                            <li>Rich in natural enzymes and probiotics</li>
-                            <li>Traditional taste that you remember</li>
-                            <li>Supports local dairy farmers</li>
-                            <li>Perfect for making homemade dairy products</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 68 kcal | Protein: 3.4g | Fat: 6.2g | Carbs: 4.5g | Calcium: 130mg</p>
-                    `
-                    },
-                    shrikhand: {
-                        title: "Shrikhand - Traditional Sweet",
-                        content: `
-                        <p>Our traditional Shrikhand represents authentic Indian dairy dessert. Made with pure yogurt and natural sweeteners.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Traditional recipe passed down generations</li>
-                            <li>Made with pure strained yogurt</li>
-                            <li>Natural cardamom and saffron flavoring</li>
-                            <li>Rich in probiotics for digestive health</li>
-                            <li>Perfect dessert for festivals</li>
-                            <li>No artificial colors or preservatives</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 150 kcal | Protein: 4.5g | Fat: 6.0g | Carbs: 20g | Calcium: 140mg</p>
-                    `
-                    },
-                
-                };
+    const descriptions = {
+        fullcream: {
+            title: "Vanilla Ice Cream - Classic Delight",
+            content: `
+            <p>Our premium Vanilla Ice Cream is crafted with pure vanilla extract and fresh dairy cream. A timeless classic that never goes out of style.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with real vanilla beans for authentic flavor</li>
+                <li>Rich and creamy texture with premium dairy</li>
+                <li>Perfect base for desserts and toppings</li>
+                <li>No artificial vanilla flavoring</li>
+                <li>Suitable for all age groups</li>
+                <li>Great for milkshakes and sundaes</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, egg yolk, pure vanilla extract, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect with fruit toppings, chocolate sauce, or as a side to warm desserts.</p>
+        `
+        },
+        toned: {
+            title: "Chocolate Ice Cream - Rich Indulgence",
+            content: `
+            <p>Indulge in our decadent Chocolate Ice Cream made with premium cocoa and Belgian chocolate chips. A chocolate lover's dream come true.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with premium cocoa powder and real chocolate</li>
+                <li>Rich, intense chocolate flavor</li>
+                <li>Smooth and velvety texture</li>
+                <li>Contains antioxidants from cocoa</li>
+                <li>Perfect for chocolate cravings</li>
+                <li>Great for special occasions</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, cocoa powder, chocolate chips, egg yolk, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Excellent with nuts, whipped cream, or as a base for chocolate sundaes.</p>
+        `
+        },
+        buffalo: {
+            title: "Strawberry Ice Cream - Fruity Fresh",
+            content: `
+            <p>Our refreshing Strawberry Ice Cream is made with real strawberry puree and chunks of fresh strawberries. A perfect blend of creamy and fruity.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with real strawberry fruit and puree</li>
+                <li>Natural pink color from strawberries</li>
+                <li>Contains vitamin C and antioxidants</li>
+                <li>Fresh fruit pieces for added texture</li>
+                <li>Light and refreshing taste</li>
+                <li>Perfect summer treat</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, fresh strawberries, strawberry puree, egg yolk, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect on its own or with fresh berries and mint leaves.</p>
+        `
+        },
+        cow: {
+            title: "Coconut Ice Cream - Tropical Paradise",
+            content: `
+            <p>Transport yourself to tropical paradise with our creamy Coconut Ice Cream. Made with fresh coconut milk and shredded coconut for authentic taste.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with fresh coconut milk and cream</li>
+                <li>Real coconut flakes for texture</li>
+                <li>Natural tropical flavor</li>
+                <li>Rich in healthy fats from coconut</li>
+                <li>Dairy-alternative friendly base</li>
+                <li>Exotic and refreshing taste</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Coconut milk, fresh cream, sugar, shredded coconut, coconut extract, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Excellent with tropical fruits or as a base for coconut-based desserts.</p>
+        `
+        },
+        shrikhand: {
+            title: "Butterscotch Ice Cream - Caramel Bliss",
+            content: `
+            <p>Experience the rich, buttery flavor of our Butterscotch Ice Cream with crunchy butterscotch pieces. A perfect combination of smooth cream and caramel crunch.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Rich butterscotch and caramel flavor</li>
+                <li>Crunchy butterscotch candy pieces</li>
+                <li>Made with real butter and brown sugar</li>
+                <li>Perfect texture contrast</li>
+                <li>Premium quality ingredients</li>
+                <li>Nostalgic and comforting taste</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, brown sugar, butter, butterscotch pieces, egg yolk, vanilla, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect with caramel sauce, nuts, or as a topping for warm desserts.</p>
+        `
+        }
+    };
 
-                const product = descriptions[productType];
-                modalContent.innerHTML = `
-                <h2>${product.title}</h2>
-                ${product.content}
-            `;
+    const product = descriptions[productType];
+    modalContent.innerHTML = `
+        <h2>${product.title}</h2>
+        ${product.content}
+    `;
 
-                modal.style.display = 'block';
-            }
+    modal.style.display = 'block';
+}
 
-            function closeModal() {
-                document.getElementById('productModal').style.display = 'none';
-            }
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
 
-            // Close modal when clicking outside of it
-            window.onclick = function (event) {
-                const modal = document.getElementById('productModal');
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
-            // Add some interactive animations on page load
-            document.addEventListener('DOMContentLoaded', function () {
-                const cards = document.querySelectorAll('.product-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                        card.style.transition = 'all 0.6s ease';
+// Add some interactive animations on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
 
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    }, index * 100);
-                });
-            });
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }, index * 100);
+    });
+});
         </script>
 </body>
 

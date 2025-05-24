@@ -493,146 +493,170 @@
         </div>
 
         <script>
-            function showDescription(productType) {
-                const modal = document.getElementById('productModal');
-                const modalContent = document.getElementById('modalContent');
+          function showDescription(productType) {
+    const modal = document.getElementById('productModal');
+    const modalContent = document.getElementById('modalContent');
 
-                const descriptions = {
-                    fullcream: {
-                        title: "Full Cream Milk - Premium Quality",
-                        content: `
-                        <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows in our organic farms.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>High in protein for muscle development</li>
-                            <li>Rich in calcium for strong bones and teeth</li>
-                            <li>Contains essential vitamins A, D, and B12</li>
-                            <li>6% fat content for energy and satiety</li>
-                            <li>No artificial preservatives or additives</li>
-                            <li>Perfect for growing children and adults</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 66 kcal | Protein: 3.2g | Fat: 6.0g | Carbs: 4.7g | Calcium: 120mg</p>
-                    `
-                    },
-                    toned: {
-                        title: "Toned Milk - Healthy Choice",
-                        content: `
-                        <p>Toned Milk offers the perfect balance of nutrition and health consciousness. Ideal for those who want milk benefits with reduced fat content.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Lower fat content (3%) for weight management</li>
-                            <li>Maintains high protein and calcium levels</li>
-                            <li>Easier to digest than full cream milk</li>
-                            <li>Suitable for heart-healthy diets</li>
-                            <li>Great for tea, coffee, and cereals</li>
-                            <li>Recommended by nutritionists</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 58 kcal | Protein: 3.1g | Fat: 3.0g | Carbs: 4.8g | Calcium: 115mg</p>
-                    `
-                    },
-                    buffalo: {
-                        title: "Buffalo Milk - Rich & Creamy",
-                        content: `
-                        <p>Our Buffalo Milk is specially formulated to provide balanced nutrition for modern lifestyles. Enhanced with essential nutrients.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Fortified with additional vitamins and minerals</li>
-                            <li>4.5% fat content for optimal nutrition</li>
-                            <li>Enhanced protein absorption</li>
-                            <li>Supports immune system function</li>
-                            <li>Smart packaging for freshness retention</li>
-                            <li>Perfect for all family members</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 62 kcal | Protein: 3.3g | Fat: 4.5g | Carbs: 4.6g | Calcium: 125mg</p>
-                    `
-                    },
-                    cow: {
-                        title: "Pure Cow Milk - Farm Fresh",
-                        content: `
-                        <p>100% Pure Cow Milk directly from our farm to your table. No mixing, no additives - just pure, natural goodness.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>100% pure cow milk with no adulteration</li>
-                            <li>Farm fresh quality with natural taste</li>
-                            <li>Rich in natural enzymes and probiotics</li>
-                            <li>Traditional taste that you remember</li>
-                            <li>Supports local dairy farmers</li>
-                            <li>Perfect for making homemade dairy products</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 68 kcal | Protein: 3.4g | Fat: 6.2g | Carbs: 4.5g | Calcium: 130mg</p>
-                    `
-                    },
-                    shrikhand: {
-                        title: "Shrikhand - Traditional Sweet",
-                        content: `
-                        <p>Our traditional Shrikhand represents authentic Indian dairy dessert. Made with pure yogurt and natural sweeteners.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Traditional recipe passed down generations</li>
-                            <li>Made with pure strained yogurt</li>
-                            <li>Natural cardamom and saffron flavoring</li>
-                            <li>Rich in probiotics for digestive health</li>
-                            <li>Perfect dessert for festivals</li>
-                            <li>No artificial colors or preservatives</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 150 kcal | Protein: 4.5g | Fat: 6.0g | Carbs: 20g | Calcium: 140mg</p>
-                    `
-                    },
-                
-                };
+    const descriptions = {
+        fullcream: {
+            title: "Full Cream Milk - Premium Quality",
+            content: `
+            <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows raised with care and proper nutrition on our certified organic farms.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>High protein content (3.2g per 100ml) for muscle development and repair</li>
+                <li>Excellent source of calcium (120mg per 100ml) for strong bones and teeth</li>
+                <li>Rich in essential vitamins A, D, B2, and B12 for overall health</li>
+                <li>6% natural fat content provides sustained energy and aids vitamin absorption</li>
+                <li>Contains natural enzymes and beneficial bacteria</li>
+                <li>No artificial preservatives, colors, or flavor enhancers</li>
+                <li>Perfect for growing children, athletes, and health-conscious adults</li>
+                <li>Ideal for making homemade paneer, yogurt, and other dairy products</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+            <p><strong>Energy:</strong> 66 kcal | <strong>Protein:</strong> 3.2g | <strong>Fat:</strong> 6.0g | <strong>Carbohydrates:</strong> 4.7g | <strong>Calcium:</strong> 120mg | <strong>Vitamin D:</strong> 0.4mcg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Perfect for drinking, tea/coffee, cereals, smoothies, and cooking traditional Indian sweets and dishes.</p>
+        `
+        },
+        toned: {
+            title: "Toned Milk - Healthy Choice",
+            content: `
+            <p>Our Toned Milk offers the perfect balance of nutrition and health consciousness. Carefully processed to reduce fat content while maintaining all essential nutrients, making it ideal for health-conscious families.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>Reduced fat content (3%) supports weight management goals</li>
+                <li>Maintains high protein (3.1g per 100ml) and calcium levels</li>
+                <li>Easier to digest compared to full cream milk</li>
+                <li>Heart-friendly option recommended by nutritionists</li>
+                <li>Lower calorie content without compromising on taste</li>
+                <li>Excellent source of phosphorus and potassium</li>
+                <li>Suitable for people with mild lactose sensitivity</li>
+                <li>Great for daily consumption by all age groups</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+            <p><strong>Energy:</strong> 58 kcal | <strong>Protein:</strong> 3.1g | <strong>Fat:</strong> 3.0g | <strong>Carbohydrates:</strong> 4.8g | <strong>Calcium:</strong> 115mg | <strong>Phosphorus:</strong> 90mg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Excellent for tea, coffee, cereals, protein shakes, and everyday drinking. Perfect for fitness enthusiasts.</p>
+        `
+        },
+        buffalo: {
+            title: "Buffalo Milk - Rich & Creamy",
+            content: `
+            <p>Our premium Buffalo Milk is sourced from healthy buffaloes raised in optimal conditions. Known for its rich, creamy texture and superior nutritional profile, it's a traditional favorite in Indian households.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>Higher protein content compared to cow milk for better muscle building</li>
+                <li>Rich, creamy texture with 4.5% natural fat content</li>
+                <li>Excellent source of calcium, magnesium, and phosphorus</li>
+                <li>Contains more minerals and vitamins than regular cow milk</li>
+                <li>Natural antioxidants support immune system function</li>
+                <li>Higher caloric density provides sustained energy</li>
+                <li>Traditional choice for making authentic Indian dairy products</li>
+                <li>Superior taste and thickness preferred by many families</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+            <p><strong>Energy:</strong> 97 kcal | <strong>Protein:</strong> 3.75g | <strong>Fat:</strong> 6.89g | <strong>Carbohydrates:</strong> 5.18g | <strong>Calcium:</strong> 169mg | <strong>Iron:</strong> 0.12mg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Ideal for making kheer, rabri, paneer, ghee, and other traditional Indian sweets. Perfect for those who prefer rich, creamy milk.</p>
+        `
+        },
+        cow: {
+            title: "Pure Cow Milk - Farm Fresh",
+            content: `
+            <p>Our 100% Pure Cow Milk comes directly from our carefully maintained dairy farm. Free from any mixing or artificial additives, it represents the pure, natural goodness that nature intended.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>100% pure cow milk with zero adulteration or mixing</li>
+                <li>Farm-to-table freshness with natural, authentic taste</li>
+                <li>Rich in natural enzymes and beneficial probiotics</li>
+                <li>Contains A2 protein which is easier to digest</li>
+                <li>Natural source of conjugated linoleic acid (CLA)</li>
+                <li>Supports local dairy farming and sustainable agriculture</li>
+                <li>Traditional processing methods preserve natural nutrients</li>
+                <li>Perfect for making homemade dairy products like curd and butter</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+            <p><strong>Energy:</strong> 68 kcal | <strong>Protein:</strong> 3.4g | <strong>Fat:</strong> 4.1g | <strong>Carbohydrates:</strong> 4.5g | <strong>Calcium:</strong> 113mg | <strong>Vitamin B12:</strong> 0.4mcg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Perfect for drinking fresh, making homemade curd, butter, ghee, and traditional recipes. Ideal for those who value purity and authenticity.</p>
+        `
+        },
+        shrikhand: {
+            title: "Standardized Milk - Premium Grade",
+            content: `
+            <p>Our Standardized Milk represents the pinnacle of dairy technology and quality control. Precisely standardized to ensure consistent fat content, enhanced nutrition, and superior taste in every bottle.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+            <ul class="benefits-list">
+                <li>Precisely standardized 5% fat content for optimal nutrition</li>
+                <li>Enhanced with additional vitamins A, D, and B-complex</li>
+                <li>Fortified with essential minerals including calcium and iron</li>
+                <li>Superior protein quality with improved bioavailability</li>
+                <li>Consistent taste and nutrition in every serving</li>
+                <li>Extended shelf life through advanced processing technology</li>
+                <li>Premium packaging ensures maximum freshness retention</li>
+                <li>Quality tested at multiple stages for purity and safety</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+            <p><strong>Energy:</strong> 70 kcal | <strong>Protein:</strong> 3.5g | <strong>Fat:</strong> 5.0g | <strong>Carbohydrates:</strong> 4.6g | <strong>Calcium:</strong> 130mg | <strong>Vitamin A:</strong> 28mcg</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+            <p>Perfect for discerning families who want premium quality milk for drinking, cooking, and making high-quality dairy products.</p>
+        `
+        }
+    };
 
-                const product = descriptions[productType];
-                modalContent.innerHTML = `
-                <h2>${product.title}</h2>
-                ${product.content}
-            `;
+    const product = descriptions[productType];
+    modalContent.innerHTML = `
+        <h2>${product.title}</h2>
+        ${product.content}
+    `;
 
-                modal.style.display = 'block';
-            }
+    modal.style.display = 'block';
+}
 
-            function closeModal() {
-                document.getElementById('productModal').style.display = 'none';
-            }
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
 
-            // Close modal when clicking outside of it
-            window.onclick = function (event) {
-                const modal = document.getElementById('productModal');
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
-            // Add some interactive animations on page load
-            document.addEventListener('DOMContentLoaded', function () {
-                const cards = document.querySelectorAll('.product-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                        card.style.transition = 'all 0.6s ease';
+// Add interactive animations on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
 
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    }, index * 100);
-                });
-            });
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }, index * 100);
+    });
+});
         </script>
 </body>
 

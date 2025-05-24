@@ -5,376 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renuka Dairy Products</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    .button {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: rgb(20, 20, 20);
-      border: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
-      cursor: pointer;
-      transition-duration: 0.3s;
-      overflow: hidden;
-      position: relative;
-       margin-left: 97%; 
-    }
-
-    .svgIcon {
-      width: 12px;
-      transition-duration: 0.3s;
-    }
-
-    .svgIcon path {
-      fill: white;
-    }
-
-    .button:hover {
-      width: 140px;
-      border-radius: 50px;
-      transition-duration: 0.3s;
-      background-color: rgb(181, 160, 255);
-      align-items: center;
-    }
-
-    .button:hover .svgIcon {
-      /* width: 20px; */
-      transition-duration: 0.3s;
-      transform: translateY(-200%);
-    }
-
-    .button::before {
-      position: absolute;
-      bottom: -20px;
-      content: "Back to home";
-      color: white;
-      /* transition-duration: .3s; */
-      font-size: 0px;
-    }
-
-    .button:hover::before {
-      font-size: 13px;
-      opacity: 1;
-      bottom: unset;
-      /* transform: translateY(-30px); */
-      transition-duration: 0.3s;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 50%, #e8f5e8 100%);
-      min-height: 100vh;
-      padding: 20px 0;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-title {
-      font-size: 3rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 15px;
-      text-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #4caf50, #2e7d32);
-      transition: left 0.4s ease;
-    }
-
-    .product-card:hover::before {
-      left: 0;
-    }
-
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
-    }
-
-    .product-image {
-      width: 200px;
-      height: 250px;
-      object-fit: contain;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      transition: transform 0.3s ease;
-      border-radius: 100%;
-    }
-
-    .product-card:hover .product-image {
-      transform: scale(1.05);
-    }
-
-    .product-name {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #2e7d32;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .product-size {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 20px;
-      background: #f8f9fa;
-      padding: 5px 15px;
-      border-radius: 15px;
-      display: inline-block;
-    }
-
-    .price-tag {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #e91e63;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .currency {
-      font-size: 1.2rem;
-    }
-
-    .original-price {
-      font-size: 1rem;
-      color: #999;
-      text-decoration: line-through;
-    }
-
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      transform: translate(-50%, -50%);
-    }
-
-    .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn-description {
-      background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
-      color: white;
-      box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
-    }
-
-    .btn-description:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(33, 150, 243, 0.6);
-    }
-
-    .nutrition-info {
-      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-      padding: 15px;
-      border-radius: 15px;
-      margin: 15px 0;
-      font-size: 0.85rem;
-      color: #5d4037;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content {
-      background-color: white;
-      margin: 5% auto;
-      padding: 30px;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 600px;
-      max-height: 80vh;
-      overflow-y: auto;
-      position: relative;
-      animation: slideIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      position: absolute;
-      right: 20px;
-      top: 15px;
-    }
-
-    .close:hover {
-      color: #333;
-    }
-
-    .modal h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #4caf50;
-    }
-
-    .modal p {
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    .benefits-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .benefits-list li {
-      padding: 8px 0;
-      padding-left: 25px;
-      position: relative;
-      color: #555;
-    }
-
-    .benefits-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #4caf50;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-
-      .product-card {
-        padding: 20px;
-      }
-
-      .modal-content {
-        margin: 10% auto;
-        padding: 20px;
-        width: 95%;
-      }
-    }
-  </style>
+<link rel="stylesheet" href="./product.css">
 </head>
 
 <body>
@@ -607,278 +239,292 @@
   </div>
 
   <script>
-    function showDescription(productType) {
-      const modal = document.getElementById('productModal');
-      const modalContent = document.getElementById('modalContent');
+  function showDescription(productType) {
+  const modal = document.getElementById('productModal');
+  const modalContent = document.getElementById('modalContent');
 
-      const descriptions = {
-        fullcream: {
-          title: "Full Cream Milk - Premium Quality",
-          content: `
-                        <p>Our Full Cream Milk is the richest and most nutritious option in our dairy range. Sourced from healthy, well-fed cows in our organic farms.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>High in protein for muscle development</li>
-                            <li>Rich in calcium for strong bones and teeth</li>
-                            <li>Contains essential vitamins A, D, and B12</li>
-                            <li>6% fat content for energy and satiety</li>
-                            <li>No artificial preservatives or additives</li>
-                            <li>Perfect for growing children and adults</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 66 kcal | Protein: 3.2g | Fat: 6.0g | Carbs: 4.7g | Calcium: 120mg</p>
-                    `
-        },
-        toned: {
-          title: "Toned Milk - Healthy Choice",
-          content: `
-                        <p>Toned Milk offers the perfect balance of nutrition and health consciousness. Ideal for those who want milk benefits with reduced fat content.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Lower fat content (3%) for weight management</li>
-                            <li>Maintains high protein and calcium levels</li>
-                            <li>Easier to digest than full cream milk</li>
-                            <li>Suitable for heart-healthy diets</li>
-                            <li>Great for tea, coffee, and cereals</li>
-                            <li>Recommended by nutritionists</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 58 kcal | Protein: 3.1g | Fat: 3.0g | Carbs: 4.8g | Calcium: 115mg</p>
-                    `
-        },
-        buffalo: {
-          title: "Buffalo Milk - Rich & Creamy",
-          content: `
-                        <p>Our Buffalo Milk is specially formulated to provide balanced nutrition for modern lifestyles. Enhanced with essential nutrients.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Fortified with additional vitamins and minerals</li>
-                            <li>4.5% fat content for optimal nutrition</li>
-                            <li>Enhanced protein absorption</li>
-                            <li>Supports immune system function</li>
-                            <li>Smart packaging for freshness retention</li>
-                            <li>Perfect for all family members</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 62 kcal | Protein: 3.3g | Fat: 4.5g | Carbs: 4.6g | Calcium: 125mg</p>
-                    `
-        },
-        cow: {
-          title: "Pure Cow Milk - Farm Fresh",
-          content: `
-                        <p>100% Pure Cow Milk directly from our farm to your table. No mixing, no additives - just pure, natural goodness.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>100% pure cow milk with no adulteration</li>
-                            <li>Farm fresh quality with natural taste</li>
-                            <li>Rich in natural enzymes and probiotics</li>
-                            <li>Traditional taste that you remember</li>
-                            <li>Supports local dairy farmers</li>
-                            <li>Perfect for making homemade dairy products</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 68 kcal | Protein: 3.4g | Fat: 6.2g | Carbs: 4.5g | Calcium: 130mg</p>
-                    `
-        },
-        shrikhand: {
-          title: "Shrikhand - Traditional Sweet",
-          content: `
-                        <p>Our traditional Shrikhand represents authentic Indian dairy dessert. Made with pure yogurt and natural sweeteners.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Traditional recipe passed down generations</li>
-                            <li>Made with pure strained yogurt</li>
-                            <li>Natural cardamom and saffron flavoring</li>
-                            <li>Rich in probiotics for digestive health</li>
-                            <li>Perfect dessert for festivals</li>
-                            <li>No artificial colors or preservatives</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 150 kcal | Protein: 4.5g | Fat: 6.0g | Carbs: 20g | Calcium: 140mg</p>
-                    `
-        },
-        icecream: {
-          title: "Ice Creams - Creamy Delight",
-          content: `
-                        <p>Premium Ice Creams made with pure milk and natural ingredients. Perfect treat for all ages and occasions.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Made with pure dairy cream</li>
-                            <li>Multiple flavors available</li>
-                            <li>Natural ingredients and flavors</li>
-                            <li>Smooth and creamy texture</li>
-                            <li>Perfect for celebrations</li>
-                            <li>Quality controlled production</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 180 kcal | Protein: 3.5g | Fat: 8.0g | Carbs: 22g | Calcium: 100mg</p>
-                    `
-        },
-        greekyogurt: {
-          title: "Greek Yogurt - Protein Rich",
-          content: `
-                        <p>Thick, creamy Greek Yogurt packed with protein and probiotics. Perfect for health-conscious individuals.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Double the protein of regular yogurt</li>
-                            <li>Rich in probiotics for gut health</li>
-                            <li>Thick and creamy texture</li>
-                            <li>Low in sugar, high in nutrients</li>
-                            <li>Perfect for breakfast or snacks</li>
-                            <li>Supports muscle building</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 97 kcal | Protein: 10g | Fat: 5.0g | Carbs: 4g | Calcium: 150mg</p>
-                    `
-        },
-        paneer: {
-          title: "Fresh Paneer - Pure Cottage Cheese",
-          content: `
-                        <p>Fresh homemade paneer prepared daily from pure milk. Soft, nutritious and perfect for Indian cuisine.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>High protein content for muscle building</li>
-                            <li>Made fresh daily from pure milk</li>
-                            <li>No preservatives or additives</li>
-                            <li>Rich in calcium and phosphorus</li>
-                            <li>Perfect for vegetarian protein needs</li>
-                            <li>Soft texture ideal for cooking</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 265 kcal | Protein: 18g | Fat: 20g | Carbs: 1.2g | Calcium: 208mg</p>
-                    `
-        },
-        butter: {
-          title: "Pure Butter - Creamy & Natural",
-          content: `
-                        <p>Pure butter churned from fresh cream. Rich, creamy and perfect for cooking, baking and spreading.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Made from fresh cream only</li>
-                            <li>Rich in vitamins A, D, E, and K</li>
-                            <li>Natural source of healthy fats</li>
-                            <li>Perfect for cooking and baking</li>
-                            <li>Traditional churning process</li>
-                            <li>No artificial colors or flavors</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 717 kcal | Protein: 0.9g | Fat: 81g | Carbs: 0.1g | Calcium: 24mg</p>
-                    `
-        },
-        buttermilk: {
-          title: "Fresh Buttermilk - Digestive & Refreshing",
-          content: `
-                        <p>Traditional buttermilk made from fresh yogurt. Light, refreshing and great for digestion.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Aids in digestion and metabolism</li>
-                            <li>Rich in probiotics for gut health</li>
-                            <li>Low in calories and fat</li>
-                            <li>Refreshing and hydrating</li>
-                            <li>Perfect summer drink</li>
-                            <li>Natural cooling properties</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 40 kcal | Protein: 3.1g | Fat: 0.9g | Carbs: 4.8g | Calcium: 116mg</p>
-                    `
-        },
-        ghee: {
-          title: "Pure Ghee - Liquid Gold",
-          content: `
-                        <p>Traditional pure ghee made from cow milk using age-old methods. Rich aroma and taste that enhances every meal.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Made using traditional bilona method</li>
-                            <li>Rich in vitamins A, D, E, and K</li>
-                            <li>High smoke point ideal for cooking</li>
-                            <li>Supports digestion and immunity</li>
-                            <li>Long shelf life without refrigeration</li>
-                            <li>Pure golden color and rich aroma</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-                        <p>Energy: 900 kcal | Protein: 0.3g | Fat: 99.5g | Carbs: 0.2g | Vitamin A: 840mcg</p>
-                    `
-        },
-        lassi: {
-          title: "Traditional Lassi - Refreshing Yogurt Drink",
-          content: `
-                        <p>Traditional lassi made from fresh yogurt with natural sweeteners. Perfect refreshing drink for any time of day.</p>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-                        <ul class="benefits-list">
-                            <li>Made from fresh homemade yogurt</li>
-                            <li>Rich in probiotics for digestive health</li>
-                            <li>Natural cooling properties</li>
-                            <li>Available in multiple flavors</li>
-                            <li>Perfect post-meal drink</li>
-                            <li>Traditional authentic taste</li>
-                        </ul>
-                        
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
-                        <p>Energy: 85 kcal | Protein: 3.5g | Fat: 3.2g | Carbs: 11g | Calcium: 120mg</p>
-                    `
-        }
-      };
-
-      const product = descriptions[productType];
-      modalContent.innerHTML = `
-                <h2>${product.title}</h2>
-                ${product.content}
-            `;
-
-      modal.style.display = 'block';
+  const descriptions = {
+    fullcream: {
+      title: "Full Cream Milk - Premium Quality",
+      content: `
+        <p>Our Full Cream Milk represents the pinnacle of dairy excellence, sourced from carefully selected, grass-fed cows in pristine farm conditions. This premium milk undergoes rigorous quality testing to ensure maximum freshness and nutritional value.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Superior protein content (3.2g per 100ml) for optimal muscle development and repair</li>
+            <li>Exceptional calcium density for stronger bones, teeth, and cardiovascular health</li>
+            <li>Rich source of vitamins A, D, B2, and B12 supporting immune function</li>
+            <li>Natural 6% fat content providing sustained energy and enhanced nutrient absorption</li>
+            <li>Zero artificial preservatives, hormones, or chemical additives</li>
+            <li>Ideal for children's growth, adult nutrition, and elderly bone health</li>
+            <li>Perfect base for homemade yogurt, paneer, and traditional desserts</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+        <p><strong>Energy:</strong> 66 kcal | <strong>Protein:</strong> 3.2g | <strong>Fat:</strong> 6.0g | <strong>Carbs:</strong> 4.7g | <strong>Calcium:</strong> 120mg | <strong>Phosphorus:</strong> 95mg</p>
+        
+        <p><em>Best consumed fresh. Store refrigerated at 4°C. Shake well before use.</em></p>
+      `
+    },
+    toned: {
+      title: "Toned Milk - Healthy Choice",
+      content: `
+        <p>Scientifically formulated toned milk that perfectly balances taste, nutrition, and health consciousness. This premium dairy product is ideal for fitness enthusiasts and health-aware families seeking optimal nutrition without excess fat.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Optimized 3% fat content supporting healthy weight management goals</li>
+            <li>Maintains premium protein and calcium levels for complete nutrition</li>
+            <li>Enhanced digestibility making it suitable for sensitive stomachs</li>
+            <li>Heart-friendly formulation recommended by nutritionists and dietitians</li>
+            <li>Excellent solubility for tea, coffee, smoothies, and cereal preparations</li>
+            <li>Lower cholesterol content compared to full cream variants</li>
+            <li>Ideal for diabetic-friendly meal planning when consumed in moderation</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+        <p><strong>Energy:</strong> 58 kcal | <strong>Protein:</strong> 3.1g | <strong>Fat:</strong> 3.0g | <strong>Carbs:</strong> 4.8g | <strong>Calcium:</strong> 115mg | <strong>Vitamin D:</strong> 40 IU</p>
+      `
+    },
+    buffalo: {
+      title: "Buffalo Milk - Rich & Creamy",
+      content: `
+        <p>Premium buffalo milk enhanced with modern fortification technology to deliver balanced nutrition for contemporary lifestyles. This specially processed milk combines traditional richness with modern nutritional science.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Advanced fortification with essential vitamins A, D, E, and mineral complex</li>
+            <li>Perfectly balanced 4.5% fat content for optimal taste and nutrition</li>
+            <li>Enhanced protein bioavailability for superior muscle protein synthesis</li>
+            <li>Immune-boosting properties with natural antioxidants and immunoglobulins</li>
+            <li>Smart packaging technology ensuring extended freshness and nutrient retention</li>
+            <li>Suitable for all age groups from toddlers to elderly individuals</li>
+            <li>Rich, creamy texture perfect for traditional Indian sweets and beverages</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+        <p><strong>Energy:</strong> 62 kcal | <strong>Protein:</strong> 3.3g | <strong>Fat:</strong> 4.5g | <strong>Carbs:</strong> 4.6g | <strong>Calcium:</strong> 125mg | <strong>Iron:</strong> 0.2mg</p>
+      `
+    },
+    cow: {
+      title: "Pure Cow Milk - Farm Fresh Excellence",
+      content: `
+        <p>Authentic farm-to-table cow milk representing the purest form of dairy nutrition. Sourced directly from our organic farms where cows graze freely on pesticide-free pastures, ensuring uncompromised quality and natural goodness.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>100% pure, unadulterated cow milk with complete traceability from farm to table</li>
+            <li>Exceptional freshness with natural farm taste that evokes childhood memories</li>
+            <li>Rich concentration of natural enzymes, probiotics, and beneficial bacteria</li>
+            <li>Traditional pastoral flavor profile maintained through ethical farming practices</li>
+            <li>Direct support to local dairy farmers and sustainable agriculture initiatives</li>
+            <li>Perfect foundation for preparing authentic homemade dairy products</li>
+            <li>Higher concentration of conjugated linoleic acid (CLA) from grass-fed cows</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+        <p><strong>Energy:</strong> 68 kcal | <strong>Protein:</strong> 3.4g | <strong>Fat:</strong> 6.2g | <strong>Carbs:</strong> 4.5g | <strong>Calcium:</strong> 130mg | <strong>Omega-3:</strong> 15mg</p>
+      `
+    },
+    shrikhand: {
+      title: "Shrikhand - Authentic Indian Dessert",
+      content: `
+        <p>Traditional Maharashtrian Shrikhand crafted using time-honored recipes passed down through generations. Made with hand-strained yogurt and naturally sourced ingredients, this dessert represents the authentic taste of Indian culinary heritage.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Authentic recipe using traditional hung curd preparation methods</li>
+            <li>Premium quality strained yogurt base ensuring smooth, creamy texture</li>
+            <li>Natural cardamom, saffron, and rose flavoring without artificial additives</li>
+            <li>Rich probiotic content supporting digestive health and gut microbiome</li>
+            <li>Perfect festive dessert for celebrations, weddings, and special occasions</li>
+            <li>Natural cooling properties ideal for hot weather consumption</li>
+            <li>Artisanal preparation ensuring consistent quality and authentic taste</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 150 kcal | <strong>Protein:</strong> 4.5g | <strong>Fat:</strong> 6.0g | <strong>Carbs:</strong> 20g | <strong>Calcium:</strong> 140mg | <strong>Probiotics:</strong> 10⁶ CFU/g</p>
+      `
+    },
+    icecream: {
+      title: "Premium Ice Creams - Artisan Crafted",
+      content: `
+        <p>Luxurious ice creams created using traditional churning methods combined with premium dairy ingredients. Each batch is carefully crafted to deliver the perfect balance of creaminess, flavor, and indulgence.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Premium dairy cream base ensuring rich, luxurious texture and mouthfeel</li>
+            <li>Extensive flavor portfolio including classic and innovative seasonal varieties</li>
+            <li>Natural fruit extracts, nuts, and flavorings without artificial preservatives</li>
+            <li>Slow-churned process creating perfect consistency and air incorporation</li>
+            <li>Ideal for celebrations, parties, and creating memorable dessert experiences</li>
+            <li>Temperature-controlled production ensuring food safety and quality standards</li>
+            <li>Available in family packs and individual servings for convenience</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100ml):</h4>
+        <p><strong>Energy:</strong> 180 kcal | <strong>Protein:</strong> 3.5g | <strong>Fat:</strong> 8.0g | <strong>Carbs:</strong> 22g | <strong>Calcium:</strong> 100mg</p>
+      `
+    },
+    greekyogurt: {
+      title: "Premium Cheese - Artisanal Quality",
+      content: `
+        <p>Handcrafted cheese made using traditional methods and premium milk from grass-fed cows. Our artisanal cheese-making process ensures rich flavor, perfect texture, and exceptional nutritional value.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Artisanal production using traditional cheese-making techniques</li>
+            <li>High-quality protein content supporting muscle development and maintenance</li>
+            <li>Rich in calcium, phosphorus, and vitamin B12 for bone and nerve health</li>
+            <li>Natural aging process developing complex flavors and improved digestibility</li>
+            <li>Perfect for gourmet cooking, sandwiches, and cheese boards</li>
+            <li>Made from hormone-free milk ensuring purity and natural taste</li>
+            <li>Various textures available from soft to aged varieties</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 350 kcal | <strong>Protein:</strong> 25g | <strong>Fat:</strong> 28g | <strong>Carbs:</strong> 2g | <strong>Calcium:</strong> 700mg</p>
+      `
+    },
+    paneer: {
+      title: "Fresh Paneer - Daily Made Cottage Cheese",
+      content: `
+        <p>Soft, fresh paneer prepared daily in our hygienic facilities using traditional methods. Made from the finest quality milk, our paneer offers exceptional taste, texture, and nutritional benefits essential for vegetarian protein requirements.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Exceptional protein quality (18g per 100g) ideal for vegetarian muscle building</li>
+            <li>Fresh daily production ensuring optimal taste, texture, and nutritional value</li>
+            <li>Zero preservatives or chemical additives maintaining natural purity</li>
+            <li>High calcium and phosphorus content supporting bone mineralization</li>
+            <li>Complete amino acid profile comparable to animal protein sources</li>
+            <li>Soft, crumbly texture perfect for curries, grilling, and traditional preparations</li>
+            <li>Low carbohydrate content suitable for ketogenic and low-carb diets</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 265 kcal | <strong>Protein:</strong> 18g | <strong>Fat:</strong> 20g | <strong>Carbs:</strong> 1.2g | <strong>Calcium:</strong> 208mg | <strong>Magnesium:</strong> 8mg</p>
+      `
+    },
+    butter: {
+      title: "Pure Butter - Traditional Churned",
+      content: `
+        <p>Authentic butter churned from fresh cream using traditional methods that preserve natural flavor and nutritional integrity. Our butter represents the perfect harmony of taste, texture, and wholesome nutrition.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Made exclusively from fresh, high-quality cream without any additives</li>
+            <li>Rich source of fat-soluble vitamins A, D, E, and K for optimal health</li>
+            <li>Natural source of healthy saturated fats supporting hormone production</li>
+            <li>Perfect for high-temperature cooking, baking, and gourmet preparations</li>
+            <li>Traditional churning process preserving natural flavor compounds</li>
+            <li>No artificial colors, flavors, or preservatives maintaining purity</li>
+            <li>Ideal for traditional Indian cooking and international cuisine applications</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 717 kcal | <strong>Protein:</strong> 0.9g | <strong>Fat:</strong> 81g | <strong>Vitamin A:</strong> 684μg | <strong>Vitamin E:</strong> 2.3mg</p>
+      `
+    },
+    buttermilk: {
+      title: "Premium Cookies - Dairy Delights",
+      content: `
+        <p>Artisanal cookies crafted with premium dairy ingredients including fresh butter, milk, and cream. Each cookie is baked to perfection, offering a delightful blend of crispy texture and rich dairy flavors.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Made with premium dairy ingredients for rich, authentic taste</li>
+            <li>Perfect tea-time companion and snack for all age groups</li>
+            <li>Crispy texture with melt-in-mouth dairy goodness</li>
+            <li>Various flavors including classic butter, milk chocolate, and cream varieties</li>
+            <li>Freshly baked quality ensuring optimal taste and texture</li>
+            <li>Individually wrapped options for freshness and convenience</li>
+            <li>Ideal for gifting, parties, and special occasions</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 450 kcal | <strong>Protein:</strong> 6g | <strong>Fat:</strong> 18g | <strong>Carbs:</strong> 65g | <strong>Calcium:</strong> 80mg</p>
+      `
+    },
+    ghee: {
+      title: "Pure Ghee - Liquid Gold of Tradition",
+      content: `
+        <p>Traditional A2 cow ghee prepared using the ancient bilona method, where curd is hand-churned to extract butter before slow-cooking to perfection. This golden elixir represents centuries of Ayurvedic wisdom and culinary excellence.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Authentic bilona method preserving traditional preparation techniques</li>
+            <li>Rich concentration of fat-soluble vitamins A, D, E, and K2</li>
+            <li>High smoke point (252°C) making it ideal for healthy high-temperature cooking</li>
+            <li>Natural digestive properties supporting gut health and metabolism</li>
+            <li>Long shelf life without refrigeration due to natural preservation</li>
+            <li>Beautiful golden color and distinctive aroma indicating purity and quality</li>
+            <li>Essential for traditional Ayurvedic cooking and therapeutic applications</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 900 kcal | <strong>Fat:</strong> 99.5g | <strong>Vitamin A:</strong> 840μg | <strong>Vitamin E:</strong> 2.8mg | <strong>Butyric Acid:</strong> 4.2g</p>
+      `
+    },
+    lassi: {
+      title: "Fresh Curd - Probiotic Powerhouse",
+      content: `
+        <p>Fresh, creamy curd prepared daily using traditional fermentation methods with carefully selected probiotic cultures. Our curd offers exceptional taste, texture, and powerful digestive health benefits.</p>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+        <ul class="benefits-list">
+            <li>Daily fresh preparation ensuring optimal probiotic activity and taste</li>
+            <li>Rich in beneficial bacteria supporting digestive health and immunity</li>
+            <li>Natural cooling properties perfect for hot weather consumption</li>
+            <li>Versatile ingredient for raita, lassi, smoothies, and traditional dishes</li>
+            <li>High protein and calcium content supporting overall nutritional needs</li>
+            <li>Traditional fermentation process without artificial cultures or additives</li>
+            <li>Smooth, creamy texture with perfect balance of sweetness and tanginess</li>
+        </ul>
+        
+        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+        <p><strong>Energy:</strong> 60 kcal | <strong>Protein:</strong> 3.5g | <strong>Fat:</strong> 3.2g | <strong>Carbs:</strong> 4.1g | <strong>Calcium:</strong> 120mg | <strong>Probiotics:</strong> 10⁸ CFU/g</p>
+      `
     }
+  };
 
-    function closeModal() {
-      document.getElementById('productModal').style.display = 'none';
-    }
+  const product = descriptions[productType];
+  modalContent.innerHTML = `
+    <h2>${product.title}</h2>
+    ${product.content}
+  `;
 
-    // Close modal when clicking outside of it
-    window.onclick = function (event) {
-      const modal = document.getElementById('productModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    }
+  modal.style.display = 'block';
+}
 
-    // Add some interactive animations on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(30px)';
-          card.style.transition = 'all 0.6s ease';
+function closeModal() {
+  document.getElementById('productModal').style.display = 'none';
+}
 
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 100);
-        }, index * 100);
-      });
-    });
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+  const modal = document.getElementById('productModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Add some interactive animations on page load
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease';
+
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100);
+    }, index * 100);
+  });
+});
   </script>
 </body>
 
