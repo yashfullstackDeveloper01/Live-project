@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Renuka Dairy Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(20, 20, 20);
+            border: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+            position: relative;
+            margin-left: 70%;
+        }
+
+        .svgIcon {
+            width: 12px;
+            transition-duration: 0.3s;
+        }
+
+        .svgIcon path {
+            fill: white;
+        }
+
+        .button:hover {
+            width: 140px;
+            border-radius: 50px;
+            transition-duration: 0.3s;
+            background-color: rgb(181, 160, 255);
+            align-items: center;
+        }
+
+        .button:hover .svgIcon {
+            /* width: 20px; */
+            transition-duration: 0.3s;
+            transform: translateY(-200%);
+        }
+
+        .button::before {
+            position: absolute;
+            bottom: -20px;
+            content: "Back to home";
+            color: white;
+            /* transition-duration: .3s; */
+            font-size: 0px;
+        }
+
+        .button:hover::before {
+            font-size: 13px;
+            opacity: 1;
+            bottom: unset;
+            /* transform: translateY(-30px); */
+            transition-duration: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 50%, #e8f5e8 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4caf50, #2e7d32);
+            transition: left 0.4s ease;
+        }
+
+        .product-card:hover::before {
+            left: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+        }
+
+        .product-image {
+            width: 200px;
+            height: 250px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border-radius: 100%;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-size {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .currency {
+            font-size: 1.2rem;
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-description {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .btn-description:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.6);
+        }
+
+        .nutrition-info {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            font-size: 0.85rem;
+            color: #5d4037;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4caf50;
+        }
+
+        .modal p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Media Queries for Button Responsiveness */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 20px;
+                width: 95%;
+            }
+
+            /* Button adjustments for tablets and small laptops */
+            .button {
+                width: 45px;
+                height: 45px;
+                margin-left: 65%;
+            }
+
+            .button:hover {
+                width: 120px;
+            }
+
+            .button::before {
+                content: "Back home";
+            }
+
+            .button:hover::before {
+                font-size: 12px;
+            }
+
+            .svgIcon {
+                width: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Mobile phone adjustments */
+            .button {
+                width: 40px;
+                height: 40px;
+                margin-left: 60%;
+                margin-right: 10px;
+            }
+
+            .button:hover {
+                width: 100px;
+            }
+
+            .button::before {
+                content: "Home";
+            }
+
+            .button:hover::before {
+                font-size: 11px;
+            }
+
+            .svgIcon {
+                width: 10px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+
+            .product-image {
+                width: 150px;
+                height: 180px;
+            }
+
+            .product-name {
+                font-size: 1.2rem;
+            }
+
+            .price-tag {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            /* Very small mobile devices */
+            .button {
+                width: 35px;
+                height: 35px;
+                margin-left: 50%;
+            }
+
+            .button:hover {
+                width: 85px;
+            }
+
+            .button::before {
+                content: "←";
+                font-size: 16px;
+            }
+
+            .button:hover::before {
+                font-size: 14px;
+                content: "Home";
+            }
+
+            .svgIcon {
+                width: 8px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .button {
+                margin-left: 75%;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .button {
+                margin-left: 80%;
+                margin-top: 10px;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .button:active {
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">Renuka Milk Products</h1>
+            <p class="section-subtitle">Pure, Fresh & Nutritious Milk Products Direct from Our Farm to Your Family</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Full Cream Milk -->
+            <div class="product-card">
+                <img src="./asset/vanilla-removebg-preview.png" alt="Full Cream Milk" class="product-image">
+                <h3 class="product-name">Vanilla Ice cream</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>32
+                    <span class="original-price">₹38</span>
+                </div>
+                <div class="nutrition-info">
+                    Rich in Protein & Calcium | 6% Fat Content
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('fullcream')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Toned Milk -->
+            <div class="product-card">
+                <img src="./asset/chocolate-removebg-preview.png" alt="Toned Milk" class="product-image">
+                <h3 class="product-name">Chocolate Ice Cream</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+                <div class="price-tag">
+                    <span class="currency">₹</span>28
+                </div>
+                <div class="nutrition-info">
+                    Low Fat Content | High Nutrition | 3% Fat
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('toned')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Buffalo Milk -->
+            <div class="product-card">
+                <img src="./asset/stobary-removebg-preview.png" alt="Buffalo Milk" class="product-image">
+                <h3 class="product-name">stobary</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+                <div class="price-tag">
+                    <span class="currency">₹</span>30
+                </div>
+                <div class="nutrition-info">
+                    Balanced Nutrition | 4.5% Fat | Fortified
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('buffalo')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Cow Milk -->
+            <div class="product-card">
+                <img src="./asset/coconut-removebg-preview.png" alt="Cow Milk" class="product-image">
+                <h3 class="product-name">Coconut Ice Cream</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>35
+                </div>
+                <div class="nutrition-info">
+                    100% Pure Cow Milk | Natural | No Additives
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('cow')">📋 Description</button>
+                </div>
+            </div>
+
+            <!-- Shrikhand -->
+            <div class="product-card">
+                <img src="./asset/buttur-removebg-preview.png" alt="Shrikhand" class="product-image">
+                <h3 class="product-name">buttur scouth ice cream</h3>
+                <p class="product-size">SKU Size: 500ml</p>
+
+                <div class="price-tag">
+                    <span class="currency">₹</span>40
+                    <span class="original-price">₹45</span>
+                </div>
+                <div class="nutrition-info">
+                    Premium Grade | Enhanced Nutrition | 5% Fat
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-description" onclick="showDescription('shrikhand')">📋 Description</button>
+                </div>
+            </div>
+        </div>   
+  <a href="./index.html">
+                <button class="button">
+                    <svg class="svgIcon" viewBox="0 0 384 512">
+                        <path
+                            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+                        </path>
+                    </svg>
+                </button></a>
+
+        <!-- Modal for Product Descriptions -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+         function showDescription(productType) {
+    const modal = document.getElementById('productModal');
+    const modalContent = document.getElementById('modalContent');
+
+    const descriptions = {
+        fullcream: {
+            title: "Vanilla Ice Cream - Classic Delight",
+            content: `
+            <p>Our premium Vanilla Ice Cream is crafted with pure vanilla extract and fresh dairy cream. A timeless classic that never goes out of style.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with real vanilla beans for authentic flavor</li>
+                <li>Rich and creamy texture with premium dairy</li>
+                <li>Perfect base for desserts and toppings</li>
+                <li>No artificial vanilla flavoring</li>
+                <li>Suitable for all age groups</li>
+                <li>Great for milkshakes and sundaes</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, egg yolk, pure vanilla extract, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect with fruit toppings, chocolate sauce, or as a side to warm desserts.</p>
+        `
+        },
+        toned: {
+            title: "Chocolate Ice Cream - Rich Indulgence",
+            content: `
+            <p>Indulge in our decadent Chocolate Ice Cream made with premium cocoa and Belgian chocolate chips. A chocolate lover's dream come true.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with premium cocoa powder and real chocolate</li>
+                <li>Rich, intense chocolate flavor</li>
+                <li>Smooth and velvety texture</li>
+                <li>Contains antioxidants from cocoa</li>
+                <li>Perfect for chocolate cravings</li>
+                <li>Great for special occasions</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, cocoa powder, chocolate chips, egg yolk, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Excellent with nuts, whipped cream, or as a base for chocolate sundaes.</p>
+        `
+        },
+        buffalo: {
+            title: "Strawberry Ice Cream - Fruity Fresh",
+            content: `
+            <p>Our refreshing Strawberry Ice Cream is made with real strawberry puree and chunks of fresh strawberries. A perfect blend of creamy and fruity.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with real strawberry fruit and puree</li>
+                <li>Natural pink color from strawberries</li>
+                <li>Contains vitamin C and antioxidants</li>
+                <li>Fresh fruit pieces for added texture</li>
+                <li>Light and refreshing taste</li>
+                <li>Perfect summer treat</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, sugar, fresh strawberries, strawberry puree, egg yolk, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect on its own or with fresh berries and mint leaves.</p>
+        `
+        },
+        cow: {
+            title: "Coconut Ice Cream - Tropical Paradise",
+            content: `
+            <p>Transport yourself to tropical paradise with our creamy Coconut Ice Cream. Made with fresh coconut milk and shredded coconut for authentic taste.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Made with fresh coconut milk and cream</li>
+                <li>Real coconut flakes for texture</li>
+                <li>Natural tropical flavor</li>
+                <li>Rich in healthy fats from coconut</li>
+                <li>Dairy-alternative friendly base</li>
+                <li>Exotic and refreshing taste</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Coconut milk, fresh cream, sugar, shredded coconut, coconut extract, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Excellent with tropical fruits or as a base for coconut-based desserts.</p>
+        `
+        },
+        shrikhand: {
+            title: "Butterscotch Ice Cream - Caramel Bliss",
+            content: `
+            <p>Experience the rich, buttery flavor of our Butterscotch Ice Cream with crunchy butterscotch pieces. A perfect combination of smooth cream and caramel crunch.</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+            <ul class="benefits-list">
+                <li>Rich butterscotch and caramel flavor</li>
+                <li>Crunchy butterscotch candy pieces</li>
+                <li>Made with real butter and brown sugar</li>
+                <li>Perfect texture contrast</li>
+                <li>Premium quality ingredients</li>
+                <li>Nostalgic and comforting taste</li>
+            </ul>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+            <p>Fresh milk, cream, brown sugar, butter, butterscotch pieces, egg yolk, vanilla, stabilizers</p>
+            
+            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+            <p>Serve chilled. Perfect with caramel sauce, nuts, or as a topping for warm desserts.</p>
+        `
+        }
+    };
+
+    const product = descriptions[productType];
+    modalContent.innerHTML = `
+        <h2>${product.title}</h2>
+        ${product.content}
+    `;
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Add some interactive animations on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }, index * 100);
+    });
+});
+        </script>
+</body>
+
+</html>

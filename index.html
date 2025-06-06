@@ -2,312 +2,298 @@
 <html lang="en">
 
 <head>
+    <title>Professional Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash_D</title>
-    <link rel="stylesheet" href="./live.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./run.js">
+    <link rel="stylesheet" href="./index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <a href="#home" class="logo">
-                <i class="fas fa-cow"></i>
-                <img class="logo-one"
-                    src="./asset/cow-logo-design-inspiration-bull-and-buffalo-cow-animal-logo-design-free-vector-removebg-preview.png">
-                <span style="font-size: xx-large;">𝓡𝓮𝓷𝓾𝓴𝓪 𝓓𝓪𝓲𝓻𝔂</span>
-            </a>
-            <nav class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#products-soon" class="nav-link">Products</a>
-                <a href="#contact" class="nav-link">Contact</a>
+        <div class="container">
+            <!-- Logo and branding -->
+            <a href="#home" class="logo">Yash_D</a>
+
+            <!-- Mobile menu toggle button -->
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation links -->
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </nav>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
-    <main class="main-content" id="home">
-        <div class="hero-content">
-            <h1 class="title">Pure Dairy Goodness</h1>
-            <p class="description">
-                Nourishing India, One Drop at a Time. Committed to delivering the fresh,
-                highest quality milk products sourced directly from local farmers.
-
-            </p>
-            <a href="./products.html" class="btn btn-primary">
-                <span>Explore Our Products</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-        <div class="floating-elements">
-            <div class="float-element float-1"></div>
-            <div class="float-element float-2"></div>
-            <div class="float-element float-3"></div>
-        </div>
-    </main>
-
-    <section class="about-section" id="about">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Renuka Dairy</h2>
-                <div class="title-underline"></div>
-            </div>
+            <div class="hero-content">
+                <!-- Main headline and intro text -->
+                 <h1>Hello I am</h1>
+                <h1>Web Developer & Designer</h1>
+                <p>Creating elegant, functional, and user-centered digital experiences</p>
 
-            <div class="about-content">
-                <p class="about-text">
-                    At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products
-                    sourced
-                    directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home.
-
-                </p>
-            </div>
-
-            <div class="about-features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>100% Organic</h3>
-                    <p>Pure organic milk from grass-fed cows in natural pastures</p>
+                <!-- Social media links -->
+                <div class="social-links">
+                    <a href="https://join.skype.com/invite/xThhLMUx8P4t" aria-label="Skype"><i class="social-icon skype"></i></a>
+                    <a href="https://github.com/yashfullstackDeveloper01/html" aria-label="GitHub"><i
+                            class="social-icon github"></i></a>
+                    <a href="https://www.linkedin.com/in/yash-dhapke-86a489357/" aria-label="LinkedIn"><i class="social-icon linkedin"></i></a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Fresh Delivery</h3>
-                    <p>Daily delivery to ensure maximum freshness at your doorstep</p>
+
+                <!-- Call to action button -->
+                <a href="./resume/resume.html" class="btn btn-primary">Resume</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container">
+                <!-- Profile picture placeholder -->
+                <div class="about-image">
+                    <div class="profile-photo"></div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Premium Quality</h3>
-                    <p>Highest quality standards maintained in every single drop</p>
+
+                <!-- Description text -->
+                <div class="about-content">
+                    <p>Hello! I'm a dedicated web developer with a strong passion for creating beautiful, functional
+                        websites. With expertise in HTML, CSS, JavaScript, and database management, I deliver
+                        high-quality web solutions that meet client needs.</p>
+                    <p>My approach combines technical skill with creative design thinking to build responsive,
+                        user-friendly interfaces that provide exceptional user experiences.
+                    </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="team-section">
-                <h3 class="team-title">Meet Our Team</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Founder">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Founder & CEO</p>
-                        </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <!-- Individual skill bars -->
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>HTML</span>
+                        <span>90%</span>
                     </div>
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Manager">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Operations Manager</p>
-                        </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress html"></div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Quality Head">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Head of Quality Assurance</p>
-                        </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>CSS</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress css"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>JavaScript</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress js"></div>
+                    </div>
+                </div>
+
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Bootstrap</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress html"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>sass</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress css"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Manual testing</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress db"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Database Management</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress db"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="coming-soon" id="products-soon">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Products</h2>
-                <div class="title-underline"></div>
-            </div>
-<a href="./section-A.html">
-            <div class="products-preview">
-                <div class="product-card">
-                    <div><img class="img-one" src="./asset/Toned Milk .jpeg">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>HTML Projects</h3>
+                        <p>Collection of semantic and accessible HTML structures...</p>
+                        <a href="./yash-project/ht.html" class="btn btn-outline">View Projects</a>
                     </div>
-                    <h4>Fresh Milk</h4>
-                    <p>Pure, fresh milk delivered daily</p>
-                </div></a>
-                <a href="./section-B.html">
-                <div class="product-card">
-                    <div><img src="./asset/paneer-removebg-preview.png">
-
-                    </div>
-                    <h4>Paneer</h4>
-                    <p>Soft, fresh cottage cheese</p>
-                </div></a>
-                <a href="./sectionC.html">
-                <div class="product-card">
-                    <div><img src="./asset/download-removebg-preview.png">
-                    </div>
-                    <h4>Ice creams</h4>
-                    <p>Creamy, and rich milk</p>
                 </div>
-            </div></a>
 
-            <div class="coming-soon-content">
-                <p>Renuka Dairy brings you the richness of tradition in every sip and bite. Sourced from healthy cows
-                    and processed with care, our products promise purity, freshness, and taste you can trust. Experience
-                    dairy the way nature intended.</p>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>CSS Projects</h3>
+                        <p>Responsive layouts and creative designs...</p>
+                        <a href="./yash-project/css.html" class="btn btn-outline">View Projects</a>
+                    </div>
+                </div>
 
-
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>JavaScript Projects</h3>
+                        <p>Interactive web applications showcasing frontend functionality.</p>
+                        <a href="./yash-project/js.html" class="btn btn-outline">View Projects</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Have questions or feedback? We'd love to hear from you. Reach out to us
-                    using the form below or through our contact information.</p>
-            </div>
+            <h2 class="section-title">Contact Me</h2>
 
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Address</h4>
-                                <p>B-14, Katol Main Road, Opp. India Bulls Power Plant, MIDC., Katol, Dist. Nagpur,
-                                    Maharashtra - 441 302</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Phone</h4>
-                                <p>+91 9075051500</p>
-                                <p>+91 7942695990</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Email</h4>
-                                <p>info@renukadairy.com</p>
-                                <p>support@renukadairy.com</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Business Hours</h4>
-                                <p>Monday - Saturday: 7:00 AM - 8:00 PM</p>
-                                <p>Sunday: 8:00 AM - 2:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-container">
-                        <iframe class="contact-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.03900799053!2d72.88115785!3d19.08268785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1653825322!5m2!1sen!2sin"
-                            allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+            <!-- Contact form -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required class="form-control">
                 </div>
-
-                <img class="c-bg" src="./asset/contact-removebg-preview.png">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Message" required class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Footer branding -->
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-cow"></i>
-                        <span>Renuka Dairy</span>
-                    </div>
-                    <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can
-                        trust, freshness you can taste.</p>
-                    <div class="social-media">
-                        <a href="" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+                    <h3>Portfolio</h3>
+                    <p>A passionate web developer dedicated to creating beautiful and functional websites...</p>
                 </div>
 
+                <!-- Quick navigation links -->
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products-soon">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
+                <!-- Contact information and social media -->
                 <div class="footer-section">
-                    <h3>Our Products</h3>
-                    <ul class="footer-links">
-                        <li><a href="">Toned Milk</a></li>
-                        <li><a href="">Full Cream Milk</a></li>
-                        <li><a href="">Cow Milk</a></li>
-                        <li><a href="">Buffalo Milk</a></li>
-                        <li><a href="">Paneer</a></li>
-                        <li><a href="">Curd & Yogurt</a></li>
-                    </ul>
+                    <h3>Contact Info</h3>
+                    <p>Email: yashdhapke6@gmail.com</p>
+                    <p>Phone: 9764411263</p>
+                    <div class="footer-social">
+                        <a href="https://join.skype.com/invite/xThhLMUx8P4t" aria-label="Skype"><i
+                                class="social-icon skype"></i></a>
+                        <a href="https://github.com/yashfullstackDeveloper01/html" aria-label="GitHub"><i
+                                class="social-icon github"></i></a>
+                        <a href="https://www.linkedin.com/in/yash-dhapke-86a489357/" aria-label="LinkedIn"><i class="social-icon linkedin"></i></a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Footer copyright -->
+            <div class="copyright">
+                <p>&copy; 2025 Portfolio. Make by yash.</p>
+            </div>
+        </div>
     </footer>
 
-    <a href="#home" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navbar = document.querySelector('.navbar');
+            const header = document.querySelector('.header');
+
+            mobileToggle.addEventListener('click', function () {
+                this.classList.toggle('active');
+                navbar.classList.toggle('active');
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Close mobile menu when clicking a nav link
+            document.querySelectorAll('.navbar a').forEach(link => {
+                link.addEventListener('click', function () {
+                    navbar.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
