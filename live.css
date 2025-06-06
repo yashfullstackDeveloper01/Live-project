@@ -144,7 +144,7 @@ body {
 .main-content {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(./asset/zzzz.jpeg);
+    url(./asset/milk\ bgm.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -769,13 +769,11 @@ section {
   color: var(--white);
   transform: translateX(5px);
 }
-
 .social-media {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .social-link {
   width: 45px;
   height: 45px;
@@ -814,12 +812,10 @@ section {
   visibility: hidden;
   transform: translateY(20px);
 }
-
 .back-to-top:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 35px rgba(46, 125, 50, 0.4);
 }
-
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -831,7 +827,6 @@ section {
     transform: translateY(0);
   }
 }
-
 @keyframes float {
   0%,
   100% {
@@ -851,7 +846,6 @@ section {
     transform: scale(1.1);
   }
 }
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .container {
@@ -862,12 +856,10 @@ section {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
   .form-row {
     grid-template-columns: 1fr;
   }
 }
-
 @media (max-width: 768px) {
   .hamburger {
     display: flex;

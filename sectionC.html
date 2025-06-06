@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renuka Dairy Products</title>
     <style>
         * {
@@ -354,6 +352,7 @@
             font-size: 1.2rem;
         }
 
+        /* Media Queries for Button Responsiveness */
         @media (max-width: 768px) {
             .section-title {
                 font-size: 2rem;
@@ -372,6 +371,146 @@
                 margin: 10% auto;
                 padding: 20px;
                 width: 95%;
+            }
+
+            /* Button adjustments for tablets and small laptops */
+            .button {
+                width: 45px;
+                height: 45px;
+                margin-left: 65%;
+            }
+
+            .button:hover {
+                width: 120px;
+            }
+
+            .button::before {
+                content: "Back home";
+            }
+
+            .button:hover::before {
+                font-size: 12px;
+            }
+
+            .svgIcon {
+                width: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Mobile phone adjustments */
+            .button {
+                width: 40px;
+                height: 40px;
+                margin-left: 60%;
+                margin-right: 10px;
+            }
+
+            .button:hover {
+                width: 100px;
+            }
+
+            .button::before {
+                content: "Home";
+            }
+
+            .button:hover::before {
+                font-size: 11px;
+            }
+
+            .svgIcon {
+                width: 10px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+
+            .product-image {
+                width: 150px;
+                height: 180px;
+            }
+
+            .product-name {
+                font-size: 1.2rem;
+            }
+
+            .price-tag {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            /* Very small mobile devices */
+            .button {
+                width: 35px;
+                height: 35px;
+                margin-left: 50%;
+            }
+
+            .button:hover {
+                width: 85px;
+            }
+
+            .button::before {
+                content: "←";
+                font-size: 16px;
+            }
+
+            .button:hover::before {
+                font-size: 14px;
+                content: "Home";
+            }
+
+            .svgIcon {
+                width: 8px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .button {
+                margin-left: 75%;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .button {
+                margin-left: 80%;
+                margin-top: 10px;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .button:active {
+                transform: scale(0.95);
             }
         }
     </style>
