@@ -1,99 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash_D</title>
-    <link rel="stylesheet" href="./live.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./run.js">
+    <title>Renuka Dairy</title>
+    <link rel="stylesheet" href="live.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <header class="header">
         <div class="header-content">
-            <a href="#home" class="logo">
-                <i class="fas fa-cow"></i>
-                <img class="logo-one"
-                    src="./asset/cow-logo-design-inspiration-bull-and-buffalo-cow-animal-logo-design-free-vector-removebg-preview.png">
-                <span style="font-size: xx-large;">𝓡𝓮𝓷𝓾𝓴𝓪 𝓓𝓪𝓲𝓻𝔂</span>
+            <a href="#" class="logo">
+                <img src="./asset/cow-logo-design-inspiration-bull-and-buffalo-cow-animal-logo-design-free-vector-removebg-preview.png" class="logo-one">
+                𝑅𝑒𝓃𝓊𝓀𝒶 𝒟𝒶𝒾𝓇𝓎
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About Us</a>
-                <a href="#products-soon" class="nav-link">Products</a>
+                <a href="#products" class="nav-link">Products</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </header>
-    <main class="main-content" id="home">
-        <div class="hero-content">
-            <h1 class="title">Pure Dairy Goodness</h1>
-            <p class="description">
-                Nourishing India, One Drop at a Time. Committed to delivering the fresh,
-                highest quality milk products sourced directly from local farmers.
 
-            </p>
-            <a href="./products.html" class="btn btn-primary">
-                <span>Explore Our Products</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+    <section class="main-content" id="home">
         <div class="floating-elements">
             <div class="float-element float-1"></div>
             <div class="float-element float-2"></div>
             <div class="float-element float-3"></div>
         </div>
-    </main>
+        <div class="hero-content">
+            <h1 class="title">Pure Dairy Goodness</h1>
+            
+            <p class="description">
+                Nourishing India, One Drop at a Time. Committed to delivering the fresh,
+                highest quality milk products sourced directly from local farmers.
+            </p>
+            <a href="./products.html" class="btn btn-primary">Explore Our Products</a>
+        </div>
+    </section>
+
     <section class="about-section" id="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Renuka Dairy</h2>
                 <div class="title-underline"></div>
             </div>
-
-            <div class="about-content">
-                <p class="about-text">
-                    At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products
-                    sourced
-                    directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home.
-                </p>
-            </div>
-
+            <p class="about-text">
+                At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products
+                sourced directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home.
+            </p>
             <div class="about-features">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
                     <h3>100% Organic</h3>
                     <p>Pure organic milk from grass-fed cows in natural pastures</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
                     <h3>Fresh Delivery</h3>
                     <p>Daily delivery to ensure maximum freshness at your doorstep</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
                     <h3>Premium Quality</h3>
                     <p>Highest quality standards maintained in every single drop</p>
                 </div>
             </div>
+
             <div class="team-section">
                 <h3 class="team-title">Meet Our Team</h3>
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Founder">
+                            <img src="./asset/team-1.jpg" alt="Team Member 1">
                             <div class="member-overlay">
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -109,7 +95,7 @@
                     </div>
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Manager">
+                            <img src="./asset/team-2.jpg" alt="Team Member 2">
                             <div class="member-overlay">
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -125,7 +111,7 @@
                     </div>
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="./asset/cream-m.jpeg" alt="Quality Head">
+                            <img src="./asset/team-3.jpg" alt="Team Member 3">
                             <div class="member-overlay">
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -144,108 +130,121 @@
         </div>
     </section>
 
-    <section class="coming-soon" id="products-soon">
+    <section class="coming-soon" id="products">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Products</h2>
                 <div class="title-underline"></div>
+                <p class="section-subtitleUSER">
+                    Renuka Dairy brings you the richness of tradition in every sip and bite. Sourced from healthy cows
+                    and processed with care, our products promise purity, freshness, and taste you can trust.
+                </p>
             </div>
-            <a href="./section-A.html">
-                <div class="products-preview">
-                    <div class="product-card">
-                        <div><img class="img-one" src="./asset/Toned Milk .jpeg">
-                        </div>
-                        <h4>Fresh Milk</h4>
-                        <p>Pure, fresh milk delivered daily</p>
-                    </div>
-            </a>
-            <a href="./section-B.html">
-                <div class="product-card">
-                    <div><img src="./asset/paneer-removebg-preview.png">
 
-                    </div>
+            <div class="products-preview">
+                <div class="product-card">
+                    <img src="./asset/Toned Milk .jpeg" alt="Fresh Milk" class="product-image">
+                    <h4>Fresh Milk</h4>
+                    <p>Pure, fresh milk delivered daily</p>
+                    <a href="./section-A.html" class="btn btn-primary product-btn">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="./asset/paneer-removebg-preview.png" alt="Paneer" class="product-image">
                     <h4>Paneer</h4>
                     <p>Soft, fresh cottage cheese</p>
+                    <a href="./section-B.html" class="btn btn-primary product-btn">View Details</a>
                 </div>
-            </a>
-            <a href="./sectionC.html">
                 <div class="product-card">
-                    <div><img src="./asset/download-removebg-preview.png">
-                    </div>
-                    <h4>Ice creams</h4>
-                    <p>Creamy, and rich milk</p>
+                    <img src="./asset/coconut-removebg-preview.png" alt="Ice Creams" class="product-image">
+                    <h4>Ice Creams</h4>
+                    <p>Creamy and rich milk-based ice creams</p>
+                    <a href="./sectionC.html" class="btn btn-primary product-btn">View Details</a>
                 </div>
-        </div></a>
+            </div>
 
-        <div class="coming-soon-content">
-            <p>Renuka Dairy brings you the richness of tradition in every sip and bite. Sourced from healthy cows
-                and processed with care, our products promise purity, freshness, and taste you can trust. Experience
-                dairy the way nature intended.</p>
-        </div>
+            <!-- New Behind the Scenes Section -->
+            <div class="kitchen-section">
+                <div class="section-header">
+                    <h2 class="section-title">Behind the Scenes: Our Kitchen</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="kitchen-preview">
+                    <div class="kitchen-card">
+                        <div class="kitchen-image-container">
+                            <video class="kitchen-image"></video>
+                            <div class="kitchen-overlay">
+                                <p>Paneer Making</p>
+                            </div>
+                        </div>
+                        <h4>Artisanal Paneer Crafting</h4>
+                        <p>Watch our experts craft the perfect paneer with traditional techniques, ensuring softness and freshness in every block.</p>
+                    </div>
+                    <div class="kitchen-card">
+                        <div class="kitchen-image-container">
+                            <video class="kitchen-image"></video>
+                            <div class="kitchen-overlay">
+                                <p>Shrikhand Preparation</p>
+                            </div>
+                        </div>
+                        <h4>Shrikhand Perfection</h4>
+                        <p>See how we create our delicious Shrikhand, blending creamy yogurt with rich flavors for a delightful dessert.</p>
+                    </div>
+                </div>
+            </div>
+
+           
         </div>
     </section>
+
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Contact Us</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">Have questions or feedback? We'd love to hear from you. Reach out to us
-                    using the form below or through our contact information.</p>
+                <p class="section-subtitle">
+                    Have questions or feedback? We'd love to hear from you. Reach out to us
+                    using the form below or through our contact information.
+                </p>
             </div>
-
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Address</h4>
-                                <p>B-14, Katol Main Road, Opp. India Bulls Power Plant, MIDC., Katol, Dist. Nagpur,
-                                    Maharashtra - 441 302</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Phone</h4>
-                                <p>+91 9075051500</p>
-                                <p>+91 7942695990</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Email</h4>
-                                <p>info@renukadairy.com</p>
-                                <p>support@renukadairy.com</p>
-                            </div>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4>Business Hours</h4>
-                                <p>Monday - Saturday: 7:00 AM - 8:00 PM</p>
-                                <p>Sunday: 8:00 AM - 2:00 PM</p>
-                            </div>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-details">
+                            <h4>Address</h4>
+                            <p>B-14, Katol Main Road, Opp. India Bulls Power Plant, MIDC., Katol, Dist. Nagpur, Maharashtra - 441 302</p>
                         </div>
                     </div>
-
-                    <div class="map-container">
-                        <iframe class="contact-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.03900799053!2d72.88115785!3d19.08268785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1653825322!5m2!1sen!2sin"
-                            allowfullscreen="" loading="lazy"></iframe>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-details">
+                            <h4>Phone</h4>
+                            <p>+91 9075051500</p>
+                            <p>+91 7942695990</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-details">
+                            <h4>Email</h4>
+                            <p>[email protected]</p>
+                            <p>[email protected]</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 7:00 AM - 8:00 PM</p>
+                            <p>Sunday: 8:00 AM - 2:00 PM</p>
+                        </div>
                     </div>
                 </div>
-
-                <img class="c-bg" src="./asset/contact-removebg-preview.png">
+                <div class="map-container">
+                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.5928926148735!2d78.97533197516112!3d21.08748388597589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd48f7d0a0f7c1f%3A0x2d6f0c2e7d5b1e5e!2sKatol%20Main%20Rd%2C%20Maharashtra%20441302%2C%20India!5e0!3m2!1sen!2sus!4v1696601234567!5m2!1sen!2sus"></iframe>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
@@ -253,52 +252,45 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-cow"></i>
-                        <span>Renuka Dairy</span>
+                        <i class="fas fa-leaf"></i>
+                        Renuka Dairy
                     </div>
-                    <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can
-                        trust, freshness you can taste.</p>
+                    <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can trust, freshness you can taste.</p>
                     <div class="social-media">
-                        <a href="" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#products-soon">Products</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h3>Our Products</h3>
                     <ul class="footer-links">
-                        <li><a href="">Toned Milk</a></li>
-                        <li><a href="">Full Cream Milk</a></li>
-                        <li><a href="">Cow Milk</a></li>
-                        <li><a href="">Buffalo Milk</a></li>
-                        <li><a href="">Paneer</a></li>
-                        <li><a href="">Curd & Yogurt</a></li>
+                        <li><a href="#">Toned Milk</a></li>
+                        <li><a href="#">Full Cream Milk</a></li>
+                        <li><a href="#">Cow Milk</a></li>
+                        <li><a href="#">Buffalo Milk</a></li>
+                        <li><a href="#">Paneer</a></li>
+                        <li><a href="#">Curd & Yogurt</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
     </footer>
-    <a href="#home" class="back-to-top">
+
+    <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
