@@ -6,56 +6,58 @@
     <title>Renuka Dairy</title>
     <link rel="stylesheet" href="live.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <div class="header-content">
             <a href="#" class="logo">
-                <img src="./asset/cow-logo-design-inspiration-bull-and-buffalo-cow-animal-logo-design-free-vector-removebg-preview.png" class="logo-one">
+                <img src="./asset/cow-logo-design-inspiration-bull-and-buffalo-cow-animal-logo-design-free-vector-removebg-preview.png"  class="logo-one">
                 𝑅𝑒𝓃𝓊𝓀𝒶 𝒟𝒶𝒾𝓇𝓎
             </a>
-            <nav class="nav-links" id="navLinks">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About Us</a>
                 <a href="#products" class="nav-link">Products</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
-    <section class="main-content" id="home">
-        <div class="floating-elements">
-            <div class="float-element float-1"></div>
-            <div class="float-element float-2"></div>
-            <div class="float-element float-3"></div>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="main-content">
         <div class="hero-content">
             <h1 class="title">Pure Dairy Goodness</h1>
-            
             <p class="description">
                 Nourishing India, One Drop at a Time. Committed to delivering the fresh,
                 highest quality milk products sourced directly from local farmers.
             </p>
             <a href="./products.html" class="btn btn-primary">Explore Our Products</a>
         </div>
+        <div class="floating-elements">
+            <div class="float-element float-1"></div>
+            <div class="float-element float-2"></div>
+            <div class="float-element float-3"></div>
+        </div>
     </section>
 
-    <section class="about-section" id="about">
+    <!-- About Section -->
+    <section id="about" class="about-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Renuka Dairy</h2>
                 <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products
+                    sourced directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home.
+                </p>
             </div>
-            <p class="about-text">
-                At Renuka Dairy, we are committed to delivering the freshest and highest quality milk products
-                sourced directly from local farmers. Our mission is to provide nutritious, wholesome dairy to every home.
-            </p>
             <div class="about-features">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-leaf"></i></div>
@@ -73,130 +75,114 @@
                     <p>Highest quality standards maintained in every single drop</p>
                 </div>
             </div>
-
-            <div class="team-section">
-                <h3 class="team-title">Meet Our Team</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/team-1.jpg" alt="Team Member 1">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+            <h2 class="team-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./asset/Toned Milk .jpeg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
                             </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Founder & CEO</p>
                         </div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/team-2.jpg" alt="Team Member 2">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                    <div class="member-info">
+                        <h4>Rahul Sharma</h4>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./asset/Toned Milk .jpeg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
                             </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Operations Manager</p>
                         </div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="./asset/team-3.jpg" alt="Team Member 3">
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                    <div class="member-info">
+                        <h4>Anita Patel</h4>
+                        <p>Operations Manager</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./asset/Toned Milk .jpeg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4>xyz</h4>
-                            <p>Head of Quality Assurance</p>
-                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Vikram Singh</h4>
+                        <p>Head of Quality Assurance</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="coming-soon" id="products">
+    <!-- Products Section -->
+    <section id="products" class="coming-soon">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Products</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitleUSER">
-                    Renuka Dairy brings you the richness of tradition in every sip and bite. Sourced from healthy cows
-                    and processed with care, our products promise purity, freshness, and taste you can trust.
-                </p>
+                <div class="coming-soon-content">
+                    <p>
+                        Renuka Dairy brings you the richness of tradition in every sip and bite. Sourced from healthy cows
+                        and processed with care, our products promise purity, freshness, and taste you can trust.
+                    </p>
+                </div>
             </div>
-
             <div class="products-preview">
                 <div class="product-card">
-                    <img src="./asset/Toned Milk .jpeg" alt="Fresh Milk" class="product-image">
+                    <img class="product-image" src="./asset/Toned Milk .jpeg" alt="Fresh Milk">
                     <h4>Fresh Milk</h4>
                     <p>Pure, fresh milk delivered daily</p>
-                    <a href="./section-A.html" class="btn btn-primary product-btn">View Details</a>
+                    <a href="./section-A.html" class="btn btn-secondary product-btn">View Details</a>
                 </div>
                 <div class="product-card">
-                    <img src="./asset/paneer-removebg-preview.png" alt="Paneer" class="product-image">
+                    <img class="product-image" src="./asset/paneer-removebg-preview.png" alt="Paneer">
                     <h4>Paneer</h4>
                     <p>Soft, fresh cottage cheese</p>
-                    <a href="./section-B.html" class="btn btn-primary product-btn">View Details</a>
+                    <a href="./section-B.html" class="btn btn-secondary product-btn">View Details</a>
                 </div>
                 <div class="product-card">
-                    <img src="./asset/coconut-removebg-preview.png" alt="Ice Creams" class="product-image">
+                    <img class="product-image" src="./asset/coconut-removebg-preview.png" alt="Ice Creams">
                     <h4>Ice Creams</h4>
                     <p>Creamy and rich milk-based ice creams</p>
-                    <a href="./sectionC.html" class="btn btn-primary product-btn">View Details</a>
+                    <a href="./sectionC.html" class="btn btn-secondary product-btn">View Details</a>
                 </div>
             </div>
-
-            <!-- New Behind the Scenes Section -->
-            <div class="kitchen-section">
-                <div class="section-header">
-                    <h2 class="section-title">Behind the Scenes: Our Kitchen</h2>
-                    <div class="title-underline"></div>
+            <h2 class="section-title">Behind the Scenes: Our Kitchen</h2>
+            <div class="kitchen-preview">
+                <div class="kitchen-card">
+                    <div class="kitchen-image-container">
+                       
+                        <div class="kitchen-overlay">Paneer Making</div>
+                    </div>
+                    <h4>Artisanal Paneer Crafting</h4>
+                    <p>Watch our experts craft the perfect paneer with traditional techniques, ensuring softness and freshness in every block.</p>
                 </div>
-                <div class="kitchen-preview">
-                    <div class="kitchen-card">
-                        <div class="kitchen-image-container">
-                            <video class="kitchen-image"></video>
-                            <div class="kitchen-overlay">
-                                <p>Paneer Making</p>
-                            </div>
-                        </div>
-                        <h4>Artisanal Paneer Crafting</h4>
-                        <p>Watch our experts craft the perfect paneer with traditional techniques, ensuring softness and freshness in every block.</p>
+                <div class="kitchen-card">
+                    <div class="kitchen-image-container">
+                        
+                        <div class="kitchen-overlay">Shrikhand Preparation</div>
                     </div>
-                    <div class="kitchen-card">
-                        <div class="kitchen-image-container">
-                            <video class="kitchen-image"></video>
-                            <div class="kitchen-overlay">
-                                <p>Shrikhand Preparation</p>
-                            </div>
-                        </div>
-                        <h4>Shrikhand Perfection</h4>
-                        <p>See how we create our delicious Shrikhand, blending creamy yogurt with rich flavors for a delightful dessert.</p>
-                    </div>
+                    <h4>Shrikhand Perfection</h4>
+                    <p>See how we create our delicious Shrikhand, blending creamy yogurt with rich flavors for a delightful dessert.</p>
                 </div>
             </div>
-
-           
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Contact Us</h2>
@@ -216,7 +202,7 @@
                         </div>
                     </div>
                     <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
                         <div class="info-details">
                             <h4>Phone</h4>
                             <p>+91 9075051500</p>
@@ -227,8 +213,8 @@
                         <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <div class="info-details">
                             <h4>Email</h4>
-                            <p>[email protected]</p>
-                            <p>[email protected]</p>
+                            <p>renukadairy@gmail.com</p>
+                            <p>support@renukadairy.com</p>
                         </div>
                     </div>
                     <div class="info-card">
@@ -241,26 +227,25 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.5928926148735!2d78.97533197516112!3d21.08748388597589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd48f7d0a0f7c1f%3A0x2d6f0c2e7d5b1e5e!2sKatol%20Main%20Rd%2C%20Maharashtra%20441302%2C%20India!5e0!3m2!1sen!2sus!4v1696601234567!5m2!1sen!2sus"></iframe>
+                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.4043774044654!2d78.97337697525904!3d21.102174985955677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd49bffffffff%3A0x9b9c6e6f6e6f6e6f!2sKatol%2C%20Maharashtra%20441302%2C%20India!5e0!3m2!1sen!2sus!4v1696523456789!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-leaf"></i>
-                        Renuka Dairy
-                    </div>
+                    <a  class="footer-logo">Renuka
+                        <i class="fas fa-leaf"></i> 
+                    </a>
                     <p>Bringing the goodness of pure dairy products from our farms to your doorstep. Quality you can trust, freshness you can taste.</p>
                     <div class="social-media">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -287,10 +272,40 @@
         </div>
     </footer>
 
-    <a href="#home" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
 
-    <script src="script.js"></script>
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Show/hide back-to-top button
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+                backToTop.style.transform = 'translateY(0)';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+                backToTop.style.transform = 'translateY(20px)';
+            }
+        });
+    </script>
 </body>
 </html>
