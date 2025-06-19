@@ -81,15 +81,28 @@ body {
   transform: scale(1.05);
 }
 
-.logo i {
-  font-size: 2rem;
-  color: var(--accent-green);
+.logo-one {
+  height: 70px;
+  width: auto;
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 0 10px 20px var(--shadow-light);
+  z-index: 999;
 }
 
 .nav-link {
@@ -130,6 +143,7 @@ body {
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -138,6 +152,18 @@ body {
   background: var(--primary-green);
   border-radius: 2px;
   transition: var(--transition);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Hero Section */
@@ -154,8 +180,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-
 
 .hero-content {
   text-align: center;
@@ -335,6 +359,7 @@ section {
   height: 100%;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A5D6A7' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
+  background: #eaff000f;
 }
 
 .about-text {
@@ -534,13 +559,14 @@ section {
 .coming-soon {
   background: var(--cream);
   position: relative;
+  padding-bottom: 7rem;
 }
 
 .products-preview {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .product-card {
@@ -552,6 +578,13 @@ section {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+  border-color: var(--primary-green);
 }
 
 .product-card::before {
@@ -571,23 +604,38 @@ section {
   opacity: 0.05;
 }
 
-.product-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px var(--shadow-medium);
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
 }
 
 .product-card h4 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary-green);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   position: relative;
   z-index: 2;
 }
 
 .product-card p {
   color: var(--text-light);
+  margin-bottom: 1.5rem;
   position: relative;
+  z-index: 2;
+}
+
+.product-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   z-index: 2;
 }
 
@@ -598,10 +646,90 @@ section {
 }
 
 .coming-soon-content p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: var(--text-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Kitchen Section */
+.kitchen-section {
+  margin-top: 4rem;
+}
+
+.kitchen-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.kitchen-card {
+  background: var(--white);
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.kitchen-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+  border-color: var(--primary-green);
+}
+
+.kitchen-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.kitchen-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  transition: var(--transition);
+}
+
+.kitchen-card:hover .kitchen-image {
+  transform: scale(1.05);
+}
+
+.kitchen-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.kitchen-card:hover .kitchen-overlay {
+  opacity: 1;
+}
+
+.kitchen-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin: 1rem 1.5rem 0.5rem;
+}
+
+.kitchen-card p {
+  color: var(--text-light);
+  margin: 0 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Contact Section */
@@ -683,6 +811,7 @@ section {
 .contact-map:hover {
   filter: grayscale(0%);
 }
+
 /* Footer */
 .footer {
   background: var(--dark-green);
@@ -769,11 +898,13 @@ section {
   color: var(--white);
   transform: translateX(5px);
 }
+
 .social-media {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .social-link {
   width: 45px;
   height: 45px;
@@ -791,6 +922,7 @@ section {
   background: var(--accent-green);
   transform: translateY(-3px);
 }
+
 /* Back to Top */
 .back-to-top {
   position: fixed;
@@ -812,10 +944,12 @@ section {
   visibility: hidden;
   transform: translateY(20px);
 }
+
 .back-to-top:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 35px rgba(46, 125, 50, 0.4);
 }
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -827,6 +961,7 @@ section {
     transform: translateY(0);
   }
 }
+
 @keyframes float {
   0%,
   100% {
@@ -846,6 +981,7 @@ section {
     transform: scale(1.1);
   }
 }
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .container {
@@ -856,10 +992,16 @@ section {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .form-row {
-    grid-template-columns: 1fr;
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .products-preview {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -867,6 +1009,10 @@ section {
 
   .nav-links {
     display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .header-content {
@@ -887,8 +1033,13 @@ section {
 
   .about-features,
   .products-preview,
-  .team-grid {
+  .team-grid,
+  .kitchen-preview {
     grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 180px;
   }
 
   .footer-content {
@@ -932,21 +1083,26 @@ section {
     font-size: 1rem;
   }
 
-  section {
-    padding: 3rem 0;
+  .section-title {
+    font-size: 1.8rem;
   }
- 
-} 
-.c-bg{
-    height: 600px;
-    width: auto;
+
+  .section-subtitle {
+    font-size: 1rem;
   }
-  .logo-one{
-    height: 70px;
-    width: auto;
+
+  .product-image,
+  .kitchen-image-container {
+    height: 150px;
   }
-.img-one{
-  border-radius: 50px;
-  height: 230px;
-  width: 300px;
+
+  .product-card,
+  .kitchen-card {
+    padding: 1.5rem;
+  }
+
+  .product-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
