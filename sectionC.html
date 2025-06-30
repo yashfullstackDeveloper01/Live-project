@@ -398,6 +398,7 @@
         }
 
         @media (max-width: 480px) {
+
             /* Mobile phone adjustments */
             .button {
                 width: 40px;
@@ -454,6 +455,7 @@
         }
 
         @media (max-width: 320px) {
+
             /* Very small mobile devices */
             .button {
                 width: 35px;
@@ -524,10 +526,10 @@
         </div>
 
         <div class="products-grid">
-            <!-- Full Cream Milk -->
+            <!-- Badam Pista Shrikhand-->
             <div class="product-card">
-                <img src="./asset/vanilla-removebg-preview.png" alt="Full Cream Milk" class="product-image">
-                <h3 class="product-name">Vanilla Ice cream</h3>
+                <img src="./asset/badam_pasta-removebg-preview.png" alt="Badam Pista Shrikhand" class="product-image">
+                <h3 class="product-name">Badam Pista Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
 
                 <div class="price-tag">
@@ -542,10 +544,10 @@
                 </div>
             </div>
 
-            <!-- Toned Milk -->
+            <!-- Elaichi Shrikhand -->
             <div class="product-card">
-                <img src="./asset/chocolate-removebg-preview.png" alt="Toned Milk" class="product-image">
-                <h3 class="product-name">Chocolate Ice Cream</h3>
+                <img src="./asset/eliche-removebg-preview.png" alt="Elaichi Shrikhand" class="product-image">
+                <h3 class="product-name">Elaichi Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
                 <div class="price-tag">
                     <span class="currency">₹</span>28
@@ -558,10 +560,10 @@
                 </div>
             </div>
 
-            <!-- Buffalo Milk -->
+            <!-- Kesar Shrikhand -->
             <div class="product-card">
-                <img src="./asset/stobary-removebg-preview.png" alt="Buffalo Milk" class="product-image">
-                <h3 class="product-name">stobary</h3>
+                <img src="./asset/kesar-removebg-preview.png" alt="Kesar Shrikhand" class="product-image">
+                <h3 class="product-name">Kesar Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
                 <div class="price-tag">
                     <span class="currency">₹</span>30
@@ -574,10 +576,10 @@
                 </div>
             </div>
 
-            <!-- Cow Milk -->
+            <!-- Mango Shrikhand -->
             <div class="product-card">
-                <img src="./asset/coconut-removebg-preview.png" alt="Cow Milk" class="product-image">
-                <h3 class="product-name">Coconut Ice Cream</h3>
+                <img src="./asset/mango_shrikhand-removebg-preview.png" alt="Mango Shrikhand" class="product-image">
+                <h3 class="product-name">Mango Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
 
                 <div class="price-tag">
@@ -591,25 +593,7 @@
                 </div>
             </div>
 
-            <!-- Shrikhand -->
-            <div class="product-card">
-                <img src="./asset/buttur-removebg-preview.png" alt="Shrikhand" class="product-image">
-                <h3 class="product-name">buttur scouth ice cream</h3>
-                <p class="product-size">SKU Size: 500ml</p>
-
-                <div class="price-tag">
-                    <span class="currency">₹</span>40
-                    <span class="original-price">₹45</span>
-                </div>
-                <div class="nutrition-info">
-                    Premium Grade | Enhanced Nutrition | 5% Fat
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('shrikhand')">📋 Description</button>
-                </div>
-            </div>
-        </div>   
-  <a href="./index.html">
+            <a href="./index.html">
                 <button class="button">
                     <svg class="svgIcon" viewBox="0 0 384 512">
                         <path
@@ -618,25 +602,25 @@
                     </svg>
                 </button></a>
 
-        <!-- Modal for Product Descriptions -->
-        <div id="productModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div id="modalContent">
-                    <!-- Dynamic content will be inserted here -->
+            <!-- Modal for Product Descriptions -->
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modalContent">
+                        <!-- Dynamic content will be inserted here -->
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <script>
-         function showDescription(productType) {
-    const modal = document.getElementById('productModal');
-    const modalContent = document.getElementById('modalContent');
+            <script>
+                function showDescription(productType) {
+                    const modal = document.getElementById('productModal');
+                    const modalContent = document.getElementById('modalContent');
 
-    const descriptions = {
-        fullcream: {
-            title: "Vanilla Ice Cream - Classic Delight",
-            content: `
+                    const descriptions = {
+                        fullcream: {
+                            title: "Vanilla Ice Cream - Classic Delight",
+                            content: `
             <p>Our premium Vanilla Ice Cream is crafted with pure vanilla extract and fresh dairy cream. A timeless classic that never goes out of style.</p>
             
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
@@ -655,10 +639,10 @@
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
             <p>Serve chilled. Perfect with fruit toppings, chocolate sauce, or as a side to warm desserts.</p>
         `
-        },
-        toned: {
-            title: "Chocolate Ice Cream - Rich Indulgence",
-            content: `
+                        },
+                        toned: {
+                            title: "Chocolate Ice Cream - Rich Indulgence",
+                            content: `
             <p>Indulge in our decadent Chocolate Ice Cream made with premium cocoa and Belgian chocolate chips. A chocolate lover's dream come true.</p>
             
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
@@ -677,10 +661,10 @@
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
             <p>Serve chilled. Excellent with nuts, whipped cream, or as a base for chocolate sundaes.</p>
         `
-        },
-        buffalo: {
-            title: "Strawberry Ice Cream - Fruity Fresh",
-            content: `
+                        },
+                        buffalo: {
+                            title: "Strawberry Ice Cream - Fruity Fresh",
+                            content: `
             <p>Our refreshing Strawberry Ice Cream is made with real strawberry puree and chunks of fresh strawberries. A perfect blend of creamy and fruity.</p>
             
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
@@ -699,10 +683,10 @@
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
             <p>Serve chilled. Perfect on its own or with fresh berries and mint leaves.</p>
         `
-        },
-        cow: {
-            title: "Coconut Ice Cream - Tropical Paradise",
-            content: `
+                        },
+                        cow: {
+                            title: "Coconut Ice Cream - Tropical Paradise",
+                            content: `
             <p>Transport yourself to tropical paradise with our creamy Coconut Ice Cream. Made with fresh coconut milk and shredded coconut for authentic taste.</p>
             
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
@@ -721,69 +705,46 @@
             <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
             <p>Serve chilled. Excellent with tropical fruits or as a base for coconut-based desserts.</p>
         `
-        },
-        shrikhand: {
-            title: "Butterscotch Ice Cream - Caramel Bliss",
-            content: `
-            <p>Experience the rich, buttery flavor of our Butterscotch Ice Cream with crunchy butterscotch pieces. A perfect combination of smooth cream and caramel crunch.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-            <ul class="benefits-list">
-                <li>Rich butterscotch and caramel flavor</li>
-                <li>Crunchy butterscotch candy pieces</li>
-                <li>Made with real butter and brown sugar</li>
-                <li>Perfect texture contrast</li>
-                <li>Premium quality ingredients</li>
-                <li>Nostalgic and comforting taste</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-            <p>Fresh milk, cream, brown sugar, butter, butterscotch pieces, egg yolk, vanilla, stabilizers</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-            <p>Serve chilled. Perfect with caramel sauce, nuts, or as a topping for warm desserts.</p>
-        `
-        }
-    };
-
-    const product = descriptions[productType];
-    modalContent.innerHTML = `
+                        },
+                    };
+                    const product = descriptions[productType];
+                    modalContent.innerHTML = `
         <h2>${product.title}</h2>
         ${product.content}
     `;
 
-    modal.style.display = 'block';
-}
+                    modal.style.display = 'block';
+                }
 
-function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
-}
+                function closeModal() {
+                    document.getElementById('productModal').style.display = 'none';
+                }
 
-// Close modal when clicking outside of it
-window.onclick = function (event) {
-    const modal = document.getElementById('productModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
+                // Close modal when clicking outside of it
+                window.onclick = function (event) {
+                    const modal = document.getElementById('productModal');
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
 
-// Add some interactive animations on page load
-document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.product-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
+                // Add some interactive animations on page load
+                document.addEventListener('DOMContentLoaded', function () {
+                    const cards = document.querySelectorAll('.product-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(30px)';
+                            card.style.transition = 'all 0.6s ease';
 
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100);
-        }, index * 100);
-    });
-});
-        </script>
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        }, index * 100);
+                    });
+                });
+            </script>
 </body>
 
 </html>

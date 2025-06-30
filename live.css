@@ -88,7 +88,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.9rem;
   align-items: center;
 }
 
@@ -685,7 +685,7 @@ section {
   position: relative;
   width: 100%;
   height: 200px;
-  overflow: hidden;
+  
 }
 
 .kitchen-image {
@@ -730,6 +730,14 @@ section {
   margin: 0 1.5rem 1.5rem;
   font-size: 0.95rem;
   line-height: 1.6;
+}
+.video{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(0, 255, 242, 0.679);
+  
 }
 
 /* Contact Section */

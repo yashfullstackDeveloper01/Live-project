@@ -144,7 +144,6 @@
     margin: 0 auto 20px;
     border-radius: 15px;
     transition: transform 0.3s ease;
-    border-radius: 100%;
   }
 
   .product-card:hover .product-image {
