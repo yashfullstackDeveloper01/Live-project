@@ -47,7 +47,7 @@
         }
 
         .button:hover .svgIcon {
-            /* width: 20px; */
+            /* width:20px; */
             transition-duration: 0.3s;
             transform: translateY(-200%);
         }
@@ -57,7 +57,7 @@
             bottom: -20px;
             content: "Back to home";
             color: white;
-            /* transition-duration: .3s; */
+            /* transition-duration:3s; */
             font-size: 0px;
         }
 
@@ -526,6 +526,13 @@
 </head>
 
 <body>
+
+
+
+
+
+
+
     
 
     <div class="container">
@@ -549,7 +556,7 @@
                     Rich in Protein & Calcium | 6% Fat Content
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('fullcream')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('paneer1')">📋 Description</button>
                 </div>
             </div>
 
@@ -565,7 +572,7 @@
                     Low Fat Content | High Nutrition | 3% Fat
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('toned')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('paneer2')">📋 Description</button>
                 </div>
             </div>
 
@@ -581,7 +588,7 @@
                     Balanced Nutrition | 4.5% Fat | Fortified
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('buffalo')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('paneer3')">📋 Description</button>
                 </div>
             </div>
         </div>
@@ -606,124 +613,119 @@
 
 
 
-        <script>
-            function showDescription(productType) {
-    const modal = document.getElementById('productModal');
-    const modalContent = document.getElementById('modalContent');
+<script>
+    function showDescription(productType) {
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('modalContent');
 
-    const descriptions = {
-        fullcream: {
-            title: "Fresh Paneer - Premium Quality",
-            content: `
-            <p>Our Fresh Paneer is made from the finest quality milk using traditional methods. Soft, creamy, and packed with nutrition, it's perfect for all your culinary needs.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-            <ul class="benefits-list">
-                <li>High protein content (18g per 100g) for muscle building and repair</li>
-                <li>Excellent source of calcium (208mg per 100g) for strong bones</li>
-                <li>Rich in phosphorus, magnesium, and vitamin B12</li>
-                <li>Low carbohydrate content suitable for keto and low-carb diets</li>
-                <li>Contains all essential amino acids for complete nutrition</li>
-                <li>Fresh daily preparation ensures maximum nutrition and taste</li>
-                <li>No artificial preservatives or additives</li>
-                <li>Soft texture perfect for direct consumption and cooking</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-            <p><strong>Energy:</strong> 265 kcal | <strong>Protein:</strong> 18.3g | <strong>Fat:</strong> 20.8g | <strong>Carbohydrates:</strong> 1.2g | <strong>Calcium:</strong> 208mg | <strong>Iron:</strong> 0.2mg</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
-            <p>Perfect for paneer curry, palak paneer, paneer tikka, grilled dishes, salads, and snacking. Ideal for vegetarian protein needs.</p>
-        `
-        },
-        toned: {
-            title: "Paneer Cubes - Ready to Cook",
-            content: `
-            <p>Our pre-cut Paneer Cubes are perfectly sized for convenient cooking. Made from premium quality milk with optimal texture for various cooking methods.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-            <ul class="benefits-list">
-                <li>Pre-cut uniform cubes save preparation time</li>
-                <li>Optimal size for even cooking and better presentation</li>
-                <li>Firm texture that holds shape during cooking</li>
-                <li>High protein content supports fitness goals</li>
-                <li>Quick absorption of spices and marinades</li>
-                <li>Convenient packaging for easy storage</li>
-                <li>Perfect for both Indian and continental cuisines</li>
-                <li>Suitable for grilling, frying, and curry preparations</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-            <p><strong>Energy:</strong> 265 kcal | <strong>Protein:</strong> 18.3g | <strong>Fat:</strong> 20.8g | <strong>Carbohydrates:</strong> 1.2g | <strong>Calcium:</strong> 208mg | <strong>Vitamin A:</strong> 195mcg</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
-            <p>Ideal for paneer butter masala, kadai paneer, paneer tikka, stir-fries, and continental dishes. Perfect for restaurant-style presentations.</p>
-        `
-        },
-        buffalo: {
-            title: "Premium Paneer - Artisan Quality",
-            content: `
-            <p>Our Premium Artisan Paneer is crafted using time-honored techniques with the highest quality buffalo milk. Rich, creamy texture with superior taste for discerning palates.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
-            <ul class="benefits-list">
-                <li>Made from premium buffalo milk for richer taste</li>
-                <li>Traditional artisan preparation methods</li>
-                <li>Higher fat content for creamier texture and taste</li>
-                <li>Superior protein quality with better amino acid profile</li>
-                <li>Natural fermentation process enhances digestibility</li>
-                <li>Longer shelf life due to traditional preservation methods</li>
-                <li>Premium packaging maintains freshness and quality</li>
-                <li>Perfect for special occasions and gourmet cooking</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
-            <p><strong>Energy:</strong> 296 kcal | <strong>Protein:</strong> 20.1g | <strong>Fat:</strong> 23.5g | <strong>Carbohydrates:</strong> 1.0g | <strong>Calcium:</strong> 230mg | <strong>Phosphorus:</strong> 180mg</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
-            <p>Excellent for premium dishes like shahi paneer, paneer makhani, desserts like rasgulla, and special occasion cooking. Perfect for fine dining experiences.</p>
-        `
-        }
-    };
+        const descriptions = {
+            paneer1: {
+                title: "Classic Fresh Paneer - Farm to Table",
+                content: `
+                    <p>Enjoy the taste of tradition with our Classic Fresh Paneer, made daily using high-quality cow milk. It’s soft, rich, and ideal for a wide range of recipes.</p>
 
-    const product = descriptions[productType];
-    modalContent.innerHTML = `
-        <h2>${product.title}</h2>
-        ${product.content}
-    `;
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                    <ul class="benefits-list">
+                        <li>Rich in protein and calcium</li>
+                        <li>Low in carbs – perfect for keto diets</li>
+                        <li>No artificial additives</li>
+                        <li>Ideal for curries, snacks, and grilled recipes</li>
+                        <li>Freshly made every day</li>
+                        <li>Soft texture that melts in your mouth</li>
+                    </ul>
 
-    modal.style.display = 'block';
-}
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+                    <p><strong>Energy:</strong> 260 kcal | <strong>Protein:</strong> 18g | <strong>Fat:</strong> 20g | <strong>Carbs:</strong> 1.5g | <strong>Calcium:</strong> 210mg</p>
 
-function closeModal() {
-    document.getElementById('productModal').style.display = 'none';
-}
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+                    <p>Great for making palak paneer, bhurji, wraps, and even desserts like sandesh or rasmalai.</p>
+                `
+            },
+            paneer2: {
+                title: "Classic Fresh Paneer - Farm to Table",
+                content: `
+                    <p>Enjoy the taste of tradition with our Classic Fresh Paneer, made daily using high-quality cow milk. It’s soft, rich, and ideal for a wide range of recipes.</p>
 
-// Close modal when clicking outside of it
-window.onclick = function (event) {
-    const modal = document.getElementById('productModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                    <ul class="benefits-list">
+                        <li>Rich in protein and calcium</li>
+                        <li>Low in carbs – perfect for keto diets</li>
+                        <li>No artificial additives</li>
+                        <li>Ideal for curries, snacks, and grilled recipes</li>
+                        <li>Freshly made every day</li>
+                        <li>Soft texture that melts in your mouth</li>
+                    </ul>
+
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+                    <p><strong>Energy:</strong> 260 kcal | <strong>Protein:</strong> 18g | <strong>Fat:</strong> 20g | <strong>Carbs:</strong> 1.5g | <strong>Calcium:</strong> 210mg</p>
+
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+                    <p>Great for making palak paneer, bhurji, wraps, and even desserts like sandesh or rasmalai.</p>
+                `
+            },
+            paneer3: {
+                title: "Classic Fresh Paneer - Farm to Table",
+                content: `
+                    <p>Enjoy the taste of tradition with our Classic Fresh Paneer, made daily using high-quality cow milk. It’s soft, rich, and ideal for a wide range of recipes.</p>
+
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Benefits:</h4>
+                    <ul class="benefits-list">
+                        <li>Rich in protein and calcium</li>
+                        <li>Low in carbs – perfect for keto diets</li>
+                        <li>No artificial additives</li>
+                        <li>Ideal for curries, snacks, and grilled recipes</li>
+                        <li>Freshly made every day</li>
+                        <li>Soft texture that melts in your mouth</li>
+                    </ul>
+
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Nutritional Information (per 100g):</h4>
+                    <p><strong>Energy:</strong> 260 kcal | <strong>Protein:</strong> 18g | <strong>Fat:</strong> 20g | <strong>Carbs:</strong> 1.5g | <strong>Calcium:</strong> 210mg</p>
+
+                    <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Best Uses:</h4>
+                    <p>Great for making palak paneer, bhurji, wraps, and even desserts like sandesh or rasmalai.</p>
+                `
+            }
+        };
+
+        const product = descriptions[productType];
+        modalContent.innerHTML = `
+            <h2>${product.title}</h2>
+            ${product.content}
+        `;
+
+        modal.style.display = 'block';
     }
-}
 
-// Add interactive animations on page load
-document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.product-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+    }
 
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+        const modal = document.getElementById('productModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Animation on product cards
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach((card, index) => {
             setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100);
-        }, index * 100);
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 100);
+        });
     });
-});
-        </script>
+</script>
+
 </body>
 
 </html>

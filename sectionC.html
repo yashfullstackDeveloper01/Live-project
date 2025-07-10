@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Renuka Dairy Products</title>
     <style>
@@ -46,7 +45,6 @@
         }
 
         .button:hover .svgIcon {
-            /* width: 20px; */
             transition-duration: 0.3s;
             transform: translateY(-200%);
         }
@@ -56,7 +54,6 @@
             bottom: -20px;
             content: "Back to home";
             color: white;
-            /* transition-duration: .3s; */
             font-size: 0px;
         }
 
@@ -64,7 +61,6 @@
             font-size: 13px;
             opacity: 1;
             bottom: unset;
-            /* transform: translateY(-30px); */
             transition-duration: 0.3s;
         }
 
@@ -373,7 +369,6 @@
                 width: 95%;
             }
 
-            /* Button adjustments for tablets and small laptops */
             .button {
                 width: 45px;
                 height: 45px;
@@ -398,8 +393,6 @@
         }
 
         @media (max-width: 480px) {
-
-            /* Mobile phone adjustments */
             .button {
                 width: 40px;
                 height: 40px;
@@ -455,8 +448,6 @@
         }
 
         @media (max-width: 320px) {
-
-            /* Very small mobile devices */
             .button {
                 width: 35px;
                 height: 35px;
@@ -490,7 +481,6 @@
             }
         }
 
-        /* Landscape orientation adjustments */
         @media (max-width: 768px) and (orientation: landscape) {
             .button {
                 margin-left: 75%;
@@ -504,7 +494,6 @@
             }
         }
 
-        /* Touch device improvements */
         @media (hover: none) and (pointer: coarse) {
             .button {
                 min-height: 44px;
@@ -517,7 +506,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="section-header">
@@ -531,7 +519,6 @@
                 <img src="./asset/badam_pasta-removebg-preview.png" alt="Badam Pista Shrikhand" class="product-image">
                 <h3 class="product-name">Badam Pista Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
-
                 <div class="price-tag">
                     <span class="currency">₹</span>32
                     <span class="original-price">₹38</span>
@@ -540,7 +527,7 @@
                     Rich in Protein & Calcium | 6% Fat Content
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('fullcream')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('badam_pista')">📋 Description</button>
                 </div>
             </div>
 
@@ -556,14 +543,14 @@
                     Low Fat Content | High Nutrition | 3% Fat
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('toned')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('elaichi')">📋 Description</button>
                 </div>
             </div>
 
             <!-- Kesar Shrikhand -->
             <div class="product-card">
                 <img src="./asset/kesar-removebg-preview.png" alt="Kesar Shrikhand" class="product-image">
-                <h3 class="product-name">Kesar Shrikhand</h3>
+               43                <h3 class="product-name">Kesar Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
                 <div class="price-tag">
                     <span class="currency">₹</span>30
@@ -572,7 +559,7 @@
                     Balanced Nutrition | 4.5% Fat | Fortified
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('buffalo')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('kesar')">📋 Description</button>
                 </div>
             </div>
 
@@ -581,7 +568,6 @@
                 <img src="./asset/mango_shrikhand-removebg-preview.png" alt="Mango Shrikhand" class="product-image">
                 <h3 class="product-name">Mango Shrikhand</h3>
                 <p class="product-size">SKU Size: 500ml</p>
-
                 <div class="price-tag">
                     <span class="currency">₹</span>35
                 </div>
@@ -589,7 +575,7 @@
                     100% Pure Cow Milk | Natural | No Additives
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('cow')">📋 Description</button>
+                    <button class="btn btn-description" onclick="showDescription('mango')">📋 Description</button>
                 </div>
             </div>
 
@@ -600,151 +586,140 @@
                             d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
                         </path>
                     </svg>
-                </button></a>
+                </button>
+            </a>
 
             <!-- Modal for Product Descriptions -->
             <div id="productModal" class="modal">
                 <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
+                    <span class="close" onclick="closeModal()">×</span>
                     <div id="modalContent">
                         <!-- Dynamic content will be inserted here -->
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <script>
-                function showDescription(productType) {
-                    const modal = document.getElementById('productModal');
-                    const modalContent = document.getElementById('modalContent');
+    <script>
+        function showDescription(productType) {
+            const modal = document.getElementById('productModal');
+            const modalContent = document.getElementById('modalContent');
 
-                    const descriptions = {
-                        fullcream: {
-                            title: "Vanilla Ice Cream - Classic Delight",
-                            content: `
-            <p>Our premium Vanilla Ice Cream is crafted with pure vanilla extract and fresh dairy cream. A timeless classic that never goes out of style.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-            <ul class="benefits-list">
-                <li>Made with real vanilla beans for authentic flavor</li>
-                <li>Rich and creamy texture with premium dairy</li>
-                <li>Perfect base for desserts and toppings</li>
-                <li>No artificial vanilla flavoring</li>
-                <li>Suitable for all age groups</li>
-                <li>Great for milkshakes and sundaes</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-            <p>Fresh milk, cream, sugar, egg yolk, pure vanilla extract, stabilizers</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-            <p>Serve chilled. Perfect with fruit toppings, chocolate sauce, or as a side to warm desserts.</p>
-        `
-                        },
-                        toned: {
-                            title: "Chocolate Ice Cream - Rich Indulgence",
-                            content: `
-            <p>Indulge in our decadent Chocolate Ice Cream made with premium cocoa and Belgian chocolate chips. A chocolate lover's dream come true.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-            <ul class="benefits-list">
-                <li>Made with premium cocoa powder and real chocolate</li>
-                <li>Rich, intense chocolate flavor</li>
-                <li>Smooth and velvety texture</li>
-                <li>Contains antioxidants from cocoa</li>
-                <li>Perfect for chocolate cravings</li>
-                <li>Great for special occasions</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-            <p>Fresh milk, cream, sugar, cocoa powder, chocolate chips, egg yolk, stabilizers</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-            <p>Serve chilled. Excellent with nuts, whipped cream, or as a base for chocolate sundaes.</p>
-        `
-                        },
-                        buffalo: {
-                            title: "Strawberry Ice Cream - Fruity Fresh",
-                            content: `
-            <p>Our refreshing Strawberry Ice Cream is made with real strawberry puree and chunks of fresh strawberries. A perfect blend of creamy and fruity.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-            <ul class="benefits-list">
-                <li>Made with real strawberry fruit and puree</li>
-                <li>Natural pink color from strawberries</li>
-                <li>Contains vitamin C and antioxidants</li>
-                <li>Fresh fruit pieces for added texture</li>
-                <li>Light and refreshing taste</li>
-                <li>Perfect summer treat</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-            <p>Fresh milk, cream, sugar, fresh strawberries, strawberry puree, egg yolk, stabilizers</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-            <p>Serve chilled. Perfect on its own or with fresh berries and mint leaves.</p>
-        `
-                        },
-                        cow: {
-                            title: "Coconut Ice Cream - Tropical Paradise",
-                            content: `
-            <p>Transport yourself to tropical paradise with our creamy Coconut Ice Cream. Made with fresh coconut milk and shredded coconut for authentic taste.</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-            <ul class="benefits-list">
-                <li>Made with fresh coconut milk and cream</li>
-                <li>Real coconut flakes for texture</li>
-                <li>Natural tropical flavor</li>
-                <li>Rich in healthy fats from coconut</li>
-                <li>Dairy-alternative friendly base</li>
-                <li>Exotic and refreshing taste</li>
-            </ul>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-            <p>Coconut milk, fresh cream, sugar, shredded coconut, coconut extract, stabilizers</p>
-            
-            <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-            <p>Serve chilled. Excellent with tropical fruits or as a base for coconut-based desserts.</p>
-        `
-                        },
-                    };
-                    const product = descriptions[productType];
-                    modalContent.innerHTML = `
-        <h2>${product.title}</h2>
-        ${product.content}
-    `;
-
-                    modal.style.display = 'block';
+            const descriptions = {
+                badam_pista: {
+                    title: "Badam Pista Shrikhand - Nutty Delight",
+                    content: `
+                        <p>Our Badam Pista Shrikhand is a rich and creamy dessert made with fresh yogurt, almonds, and pistachios. A perfect blend of nutty flavors and velvety texture.</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+                        <ul class="benefits-list">
+                            <li>Made with premium almonds and pistachios</li>
+                            <li>Rich source of protein and healthy fats</li>
+                            <li>Creamy texture with a nutty crunch</li>
+                            <li>No artificial flavors or preservatives</li>
+                            <li>Perfect for festive occasions</li>
+                            <li>Ideal as a dessert or snack</li>
+                        </ul>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+                        <p>Fresh yogurt, sugar, almonds, pistachios, cardamom, saffron</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+                        <p>Serve chilled with puri or enjoy as a standalone dessert.</p>
+                    `
+                },
+                elaichi: {
+                    title: "Elaichi Shrikhand - Aromatic Bliss",
+                    content: `
+                        <p>Our Elaichi Shrikhand is a traditional Indian dessert infused with the aromatic essence of cardamom, offering a refreshing and delightful taste.</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+                        <ul class="benefits-list">
+                            <li>Infused with premium cardamom for a unique flavor</li>
+                            <li>Low fat content for a guilt-free indulgence</li>
+                            <li>Smooth and creamy texture</li>
+                            <li>Rich in calcium and probiotics</li>
+                            <li>Perfect for all age groups</li>
+                            <li>Great as a dessert or with meals</li>
+                        </ul>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+                        <p>Fresh yogurt, sugar, cardamom, saffron</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+                        <p>Serve chilled with puri or as a sweet side dish.</p>
+                    `
+                },
+                kesar: {
+                    title: "Kesar Shrikhand - Saffron Elegance",
+                    content: `
+                        <p>Our Kesar Shrikhand is a luxurious dessert made with premium saffron strands, offering a rich and aromatic experience with every bite.</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+                        <ul class="benefits-list">
+                            <li>Infused with high-quality saffron for a royal taste</li>
+                            <li>Balanced nutrition with a creamy texture</li>
+                            <li>Fortified with essential nutrients</li>
+                            <li>No artificial colors or flavors</li>
+                            <li>Perfect for special occasions</li>
+                            <li>Delightful as a standalone treat</li>
+                        </ul>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+                        <p>Fresh yogurt, sugar, saffron, cardamom, nuts</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+                        <p>Serve chilled with puri or as a festive dessert.</p>
+                    `
+                },
+                mango: {
+                    title: "Mango Shrikhand - Tropical Indulgence",
+                    content: `
+                        <p>Our Mango Shrikhand is a vibrant and creamy dessert made with real mango puree, delivering the perfect balance of sweetness and tanginess.</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
+                        <ul class="benefits-list">
+                            <li>Made with 100% pure cow milk and mango puree</li>
+                            <li>Natural sweetness with no additives</li>
+                            <li>Rich in vitamins and antioxidants</li>
+                            <li>Smooth and luscious texture</li>
+                            <li>Perfect for summer indulgence</li>
+                            <li>Great for kids and adults alike</li>
+                        </ul>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
+                        <p>Fresh yogurt, mango puree, sugar, cardamom</p>
+                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
+                        <p>Serve chilled with fresh mango slices or as a dessert.</p>
+                    `
                 }
+            };
 
-                function closeModal() {
-                    document.getElementById('productModal').style.display = 'none';
-                }
+            const product = descriptions[productType];
+            modalContent.innerHTML = `
+                <h2>${product.title}</h2>
+                ${product.content}
+            `;
 
-                // Close modal when clicking outside of it
-                window.onclick = function (event) {
-                    const modal = document.getElementById('productModal');
-                    if (event.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                }
+            modal.style.display = 'block';
+        }
 
-                // Add some interactive animations on page load
-                document.addEventListener('DOMContentLoaded', function () {
-                    const cards = document.querySelectorAll('.product-card');
-                    cards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(30px)';
-                            card.style.transition = 'all 0.6s ease';
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
 
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 100);
-                        }, index * 100);
-                    });
-                });
-            </script>
+        window.onclick = function (event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'all 0.6s ease';
+
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
 </body>
-
 </html>
