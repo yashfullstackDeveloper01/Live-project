@@ -514,30 +514,15 @@
         </div>
 
         <div class="products-grid">
-            <!-- Badam Pista Shrikhand-->
-            <div class="product-card">
-                <img src="./asset/badam_pasta-removebg-preview.png" alt="Badam Pista Shrikhand" class="product-image">
-                <h3 class="product-name">Badam Pista Shrikhand</h3>
-                <p class="product-size">SKU Size: 500ml</p>
-                <div class="price-tag">
-                    <span class="currency">₹</span>32
-                    <span class="original-price">₹38</span>
-                </div>
-                <div class="nutrition-info">
-                    Rich in Protein & Calcium | 6% Fat Content
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('badam_pista')">📋 Description</button>
-                </div>
-            </div>
+           
 
             <!-- Elaichi Shrikhand -->
             <div class="product-card">
                 <img src="./asset/eliche-removebg-preview.png" alt="Elaichi Shrikhand" class="product-image">
                 <h3 class="product-name">Elaichi Shrikhand</h3>
-                <p class="product-size">SKU Size: 500ml</p>
+                <p class="product-size">SKU Size: 1 kg</p>
                 <div class="price-tag">
-                    <span class="currency">₹</span>28
+                    <span class="currency">₹</span>240
                 </div>
                 <div class="nutrition-info">
                     Low Fat Content | High Nutrition | 3% Fat
@@ -547,29 +532,14 @@
                 </div>
             </div>
 
-            <!-- Kesar Shrikhand -->
-            <div class="product-card">
-                <img src="./asset/kesar-removebg-preview.png" alt="Kesar Shrikhand" class="product-image">
-               43                <h3 class="product-name">Kesar Shrikhand</h3>
-                <p class="product-size">SKU Size: 500ml</p>
-                <div class="price-tag">
-                    <span class="currency">₹</span>30
-                </div>
-                <div class="nutrition-info">
-                    Balanced Nutrition | 4.5% Fat | Fortified
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-description" onclick="showDescription('kesar')">📋 Description</button>
-                </div>
-            </div>
-
+          
             <!-- Mango Shrikhand -->
             <div class="product-card">
                 <img src="./asset/mango_shrikhand-removebg-preview.png" alt="Mango Shrikhand" class="product-image">
                 <h3 class="product-name">Mango Shrikhand</h3>
-                <p class="product-size">SKU Size: 500ml</p>
+                <p class="product-size">SKU Size: 1 kg</p>
                 <div class="price-tag">
-                    <span class="currency">₹</span>35
+                    <span class="currency">₹</span>280
                 </div>
                 <div class="nutrition-info">
                     100% Pure Cow Milk | Natural | No Additives
@@ -607,25 +577,7 @@
             const modalContent = document.getElementById('modalContent');
 
             const descriptions = {
-                badam_pista: {
-                    title: "Badam Pista Shrikhand - Nutty Delight",
-                    content: `
-                        <p>Our Badam Pista Shrikhand is a rich and creamy dessert made with fresh yogurt, almonds, and pistachios. A perfect blend of nutty flavors and velvety texture.</p>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-                        <ul class="benefits-list">
-                            <li>Made with premium almonds and pistachios</li>
-                            <li>Rich source of protein and healthy fats</li>
-                            <li>Creamy texture with a nutty crunch</li>
-                            <li>No artificial flavors or preservatives</li>
-                            <li>Perfect for festive occasions</li>
-                            <li>Ideal as a dessert or snack</li>
-                        </ul>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-                        <p>Fresh yogurt, sugar, almonds, pistachios, cardamom, saffron</p>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-                        <p>Serve chilled with puri or enjoy as a standalone dessert.</p>
-                    `
-                },
+                
                 elaichi: {
                     title: "Elaichi Shrikhand - Aromatic Bliss",
                     content: `
@@ -644,25 +596,8 @@
                         <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
                         <p>Serve chilled with puri or as a sweet side dish.</p>
                     `
-                },
-                kesar: {
-                    title: "Kesar Shrikhand - Saffron Elegance",
-                    content: `
-                        <p>Our Kesar Shrikhand is a luxurious dessert made with premium saffron strands, offering a rich and aromatic experience with every bite.</p>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Key Features:</h4>
-                        <ul class="benefits-list">
-                            <li>Infused with high-quality saffron for a royal taste</li>
-                            <li>Balanced nutrition with a creamy texture</li>
-                            <li>Fortified with essential nutrients</li>
-                            <li>No artificial colors or flavors</li>
-                            <li>Perfect for special occasions</li>
-                            <li>Delightful as a standalone treat</li>
-                        </ul>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Ingredients:</h4>
-                        <p>Fresh yogurt, sugar, saffron, cardamom, nuts</p>
-                        <h4 style="color: #2e7d32; margin: 20px 0 10px 0;">Serving Suggestions:</h4>
-                        <p>Serve chilled with puri or as a festive dessert.</p>
-                    `
+          
+            
                 },
                 mango: {
                     title: "Mango Shrikhand - Tropical Indulgence",
