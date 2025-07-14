@@ -28,6 +28,7 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
+  transition: opacity 0.3s ease;
 }
 
 /* Header Styles */
@@ -75,6 +76,7 @@ body {
   background: var(--light-green);
   border-radius: 50%;
   padding: 10px;
+  transition: var(--transition);
 }
 
 .logo-text {
@@ -86,12 +88,14 @@ body {
 .logo-main {
   font-size: 1.6rem;
   font-weight: 800;
+  transition: var(--transition);
 }
 
 .logo-sub {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--text-light);
+  transition: var(--transition);
 }
 
 .nav-links {
@@ -144,7 +148,6 @@ body {
   background: transparent;
   border: none;
   z-index: 1001;
-  margin-left:-10px;
 }
 
 .hamburger:hover {
@@ -186,6 +189,17 @@ body {
   overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
 .hero-content {
   text-align: center;
   color: var(--white);
@@ -204,6 +218,11 @@ body {
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.hero-badge:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .lang-btn {
@@ -233,6 +252,7 @@ body {
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.1;
+  transition: var(--transition);
 }
 
 .hero-subtitle {
@@ -243,6 +263,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  transition: var(--transition);
 }
 
 .hero-buttons {
@@ -313,45 +334,11 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-.float-1 {
-  width: 80px;
-  height: 80px;
-  top: 15%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.float-2 {
-  width: 120px;
-  height: 120px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.float-3 {
-  width: 60px;
-  height: 60px;
-  bottom: 25%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-.float-4 {
-  width: 100px;
-  height: 100px;
-  top: 30%;
-  right: 30%;
-  animation-delay: 1s;
-}
-
-.float-5 {
-  width: 40px;
-  height: 40px;
-  bottom: 40%;
-  right: 10%;
-  animation-delay: 3s;
-}
+.float-1 { width: 80px; height: 80px; top: 15%; left: 10%; animation-delay: 0s; }
+.float-2 { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+.float-3 { width: 60px; height: 60px; bottom: 25%; left: 20%; animation-delay: 4s; }
+.float-4 { width: 100px; height: 100px; top: 30%; right: 30%; animation-delay: 1s; }
+.float-5 { width: 40px; height: 40px; bottom: 40%; right: 10%; animation-delay: 3s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -378,181 +365,258 @@ body {
   visibility: visible;
 }
 
+/* Loading Animation */
+.loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.loading.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .logo-main {
-      font-size: 1.4rem;
+@media (max-width: 1200px) {
+  .header-content {
+    padding: 1rem 1.5rem;
   }
   
-  .header-content {
-      padding: 1rem 1.5rem;
-  }
-
   .hero-title {
-      font-size: 3.5rem;
+    font-size: 3.8rem;
   }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
 
+@media (max-width: 1024px) {
+  .logo-main {
+    font-size: 1.4rem;
+  }
+  
+  .logo-one {
+    height: 70px;
+    width: 85px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
   .lang-btn {
-      top: -0.5rem;
-      right: -1rem;
+    top: -0.5rem;
+    right: -1rem;
   }
 }
 
 @media (max-width: 768px) {
   .header-content {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 300px;
-      height: 100vh;
-      background: var(--white);
-      flex-direction: column;
-      padding: 8rem 2rem 2rem;
-      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-      gap: 2rem;
-      transition: var(--transition);
-      z-index: 1000;
-      justify-content: flex-start;
-      align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 8rem 2rem 2rem;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    transition: var(--transition);
+    z-index: 1000;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .nav-links.active {
-      right: 0;
+    right: 0;
   }
 
   .nav-link {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      text-align: left;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    text-align: left;
   }
 
   .logo-main {
-      font-size: 1.1rem;
-      line-height: 1.3;
+    font-size: 1.1rem;
+    line-height: 1.3;
   }
 
   .logo-sub {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .logo-one {
+    height: 60px;
+    width: 75px;
+  }
+
+  .hero {
+    background-attachment: scroll;
   }
 
   .hero-title {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 
   .hero-buttons {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .lang-btn {
-      position: static;
-      margin-bottom: 1rem;
-      font-size: 0.8rem;
-      padding: 0.4rem 0.8rem;
+    position: static;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .hero-content {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
 
   .hero-badge {
-      font-size: 0.8rem;
-      padding: 0.4rem 1rem;
-      margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    min-width: 200px;
+    padding: 0.9rem 1.8rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .header-content {
-      padding: 0.8rem;
+    padding: 0.8rem;
   }
 
   .logo-one {
-      height: 60px;
-      width: 75px;
+    height: 50px;
+    width: 60px;
   }
 
   .logo-main {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .logo-sub {
-      font-size: 0.7rem;
+    font-size: 0.7rem;
   }
 
   .nav-links {
-      width: 280px;
-      padding: 6rem 1.5rem 2rem;
+    width: 280px;
+    padding: 6rem 1.5rem 2rem;
   }
 
   .hero-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-subtitle {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-content {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .btn {
-      min-width: 160px;
-      padding: 0.8rem 1.5rem;
-      font-size: 0.9rem;
+    min-width: 160px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 
   .floating-elements {
-      display: none;
+    display: none;
   }
 }
 
 @media (max-width: 360px) {
   .logo-main {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .logo-one {
+    height: 45px;
+    width: 55px;
   }
   
   .nav-links {
-      width: 250px;
+    width: 250px;
   }
 
   .hero-title {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .hero-subtitle {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .btn {
-      min-width: 140px;
-      padding: 0.7rem 1.2rem;
-      font-size: 0.8rem;
+    min-width: 140px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
   }
 }
 
-/* Fix for background attachment on mobile */
-@media (max-width: 768px) {
-  .hero {
-      background-attachment: scroll;
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-green: #1a4f1d;
+    --text-dark: #000000;
+    --white: #ffffff;
+  }
+  
+  .hero::before {
+    background: rgba(0, 0, 0, 0.6);
   }
 }
 /* About Section */
